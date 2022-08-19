@@ -12,10 +12,15 @@ class Feed extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'title', 'slug', 'description', 'image', 'is_public',
+        'title', 'slug', 'description', 'image', 'is_public', 'user_id',
     ];
 
     protected $casts = [
         'is_public' => 'boolean',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

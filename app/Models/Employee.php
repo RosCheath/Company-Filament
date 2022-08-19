@@ -12,6 +12,11 @@ class Employee extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'name', 'image', 'title', 'started', 'bd', 'address', 'salary', 'sex', 'cv', 'phone',
+        'name', 'image', 'title', 'started', 'bd', 'address', 'salary', 'sex', 'cv', 'phone', 'user_id',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
