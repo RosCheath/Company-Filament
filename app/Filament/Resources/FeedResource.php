@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\FeedResource\Pages;
+use App\Filament\Resources\FeedResource\Widgets\FeedOverview;
 use App\Models\Feed;
 use Closure;
 use Filament\Forms;
@@ -64,10 +65,9 @@ class FeedResource extends Resource
                     ]),
                     Card::make([
                         Toggle::make('is_public')
-//                            ->inline(false)
                             ->label('Public')
-                            ->onIcon('heroicon-s-lightning-bolt')
-                            ->offIcon('heroicon-s-user'),
+                            ->onIcon('heroicon-s-eye')
+                            ->offIcon('heroicon-s-eye-off'),
                     ]),
                 ])
                     ->columnSpan([
@@ -88,7 +88,9 @@ class FeedResource extends Resource
                     ->searchable(),
 
                 BooleanColumn::make('is_public')
-                    ->label('Is Public'),
+                    ->label('Is Public')
+                    ->trueIcon('heroicon-s-eye')
+                    ->falseIcon('heroicon-s-eye-off'),
             ])
             ->filters([
                 Tables\Filters\TrashedFilter::make(),
@@ -120,6 +122,13 @@ class FeedResource extends Resource
     {
         return [
             //
+        ];
+    }
+
+    public static function getWidgets(): array
+    {
+        return [
+            FeedOverview::class,
         ];
     }
 

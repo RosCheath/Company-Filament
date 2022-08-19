@@ -2,6 +2,7 @@
 
 namespace App\Filament\Widgets;
 
+use App\Models\Employee;
 use App\Models\Feed;
 use App\Models\User;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
@@ -13,15 +14,11 @@ class StatsOverview extends BaseWidget
     {
         return [
             Card::make('All Feed', Feed::all()->count())
-                ->description('32k increase')
-                ->descriptionIcon('heroicon-s-trending-up')
-                ->icon('heroicon-o-rss')
-                ->color('success'),
-            Card::make('All User', User::all()->count())
-                ->description('7% increase')
-                ->descriptionIcon('heroicon-s-trending-down')
+                ->description('Total your company post content')
+                ->icon('heroicon-o-rss'),
+            Card::make('All Employees', Employee::all()->count())
+                ->description('Total Employee in your company')
                 ->icon('heroicon-o-users')
-                ->color('danger'),
 
         ];
     }

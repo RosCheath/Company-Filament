@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\FeedResource\Pages;
+namespace App\Filament\Resources\EmployeeResource\Pages;
 
-use App\Filament\Resources\FeedResource;
+use App\Filament\Resources\EmployeeResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
 
-class ListFeeds extends ListRecords
+class ListEmployees extends ListRecords
 {
-    protected static string $resource = FeedResource::class;
+    protected static string $resource = EmployeeResource::class;
 
     protected function getActions(): array
     {
@@ -20,7 +20,7 @@ class ListFeeds extends ListRecords
     protected function getHeaderWidgets(): array
     {
         return [
-            FeedResource\Widgets\FeedOverview::class,
+            EmployeeResource\Widgets\EmployeeOverview::class,
         ];
     }
 }
