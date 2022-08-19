@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\FeedResource\Pages;
-
 use App\Models\Feed;
 use Closure;
 use Filament\Forms;
@@ -61,23 +60,21 @@ class FeedResource extends Resource
                         Placeholder::make('created_at')
                             ->label('Created at'),
                         Placeholder::make('updated_at')
-                            ->label('Last Updated')
+                            ->label('Last Updated'),
                     ]),
                     Card::make([
                         Toggle::make('is_public')
 //                            ->inline(false)
                             ->label('Public')
                             ->onIcon('heroicon-s-lightning-bolt')
-                            ->offIcon('heroicon-s-user')
-                    ])
+                            ->offIcon('heroicon-s-user'),
+                    ]),
                 ])
                     ->columnSpan([
                         12,
                         'lg' => 2,
                     ]),
             ])->columns(12);
-
-
     }
 
     public static function table(Table $table): Table
@@ -91,14 +88,14 @@ class FeedResource extends Resource
                     ->searchable(),
 
                 BooleanColumn::make('is_public')
-                    ->label('Is Public')
+                    ->label('Is Public'),
             ])
             ->filters([
                 Tables\Filters\TrashedFilter::make(),
                 SelectFilter::make('is_public')
                     ->options([
                         '1' => 'Published',
-                        '0' => 'Un-published'
+                        '0' => 'Un-published',
                     ]),
             ])
             ->actions([

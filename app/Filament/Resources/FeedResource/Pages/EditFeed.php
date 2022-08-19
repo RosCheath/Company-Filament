@@ -16,9 +16,9 @@ class EditFeed extends EditRecord
         return [
             Actions\DeleteAction::make(),
             ActionGroup::make([
-            Actions\ForceDeleteAction::make(),
-            Actions\RestoreAction::make(),
-            ])
+                Actions\ForceDeleteAction::make(),
+                Actions\RestoreAction::make(),
+            ]),
         ];
     }
 }

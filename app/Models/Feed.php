@@ -12,10 +12,10 @@ class Feed extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'title','slug', 'description','image','is_public'
+        'title', 'slug', 'description', 'image', 'is_public',
     ];
+
     protected $casts = [
         'is_public' => 'boolean',
     ];
-
 }
