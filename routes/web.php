@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
+Route::get('about/us', [\App\Http\Controllers\AboutUsController::class, 'index']);
+Route::get('our/services', [\App\Http\Controllers\OurServiceController::class, 'index']);
+Route::get('new/feed', [\App\Http\Controllers\NewFeedController::class, 'index']);
+Route::get('contact/us', [\App\Http\Controllers\ContactUsController::class, 'index']);
