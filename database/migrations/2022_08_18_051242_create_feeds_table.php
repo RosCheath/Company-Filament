@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('feeds', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
             $table->string('title');
-//            $table->foreignId('user_id');
             $table->string('slug')->unique();
             $table->text('description');
             $table->string('image');

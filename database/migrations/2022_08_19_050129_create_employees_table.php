@@ -16,15 +16,15 @@ return new class extends Migration
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-//            $table->foreignId('user_id');
+            $table->foreignId('user_id');
             $table->string('image');
             $table->string('title');
             $table->date('started');
             $table->date('bd');
             $table->string('address')->nullable();
-            $table->integer('salary');
+            $table->string('salary');
             $table->boolean('sex');
-            $table->integer('phone');
+            $table->string('phone');
             $table->string('cv')->nullable();
             $table->softDeletes();
             $table->timestamps();

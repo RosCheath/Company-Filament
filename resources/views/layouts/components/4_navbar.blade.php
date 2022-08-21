@@ -22,16 +22,16 @@
                 {{ __('Home') }}</a>
             <a href="{{url('about/us')}}" class="nav-item nav-link
             {{ (request()->is('about/us')) ? 'active' : '' }}">
-                About Us</a>
+                {{__('About Us')}}</a>
             <a href="{{url('our/services')}}" class="nav-item nav-link
             {{ (request()->is('our/services')) ? 'active' : '' }}">
-                Our Services</a>
+                {{__('Our Services')}}</a>
             <a href="{{url('new/feed')}}" class="nav-item nav-link
             {{ (request()->is('new/feed')) ? 'active' : '' }}">
-                New Feed</a>
+                {{__('New Feed')}}</a>
             <a href="{{url('contact/us')}}" class="nav-item nav-link
             {{ (request()->is('contact/us')) ? 'active' : '' }}">
-                Contact Us</a>
+                {{__('Contact Us')}}</a>
         </div>
     </div>
 </nav>

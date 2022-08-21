@@ -13,6 +13,7 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Auth;
 
 class EmployeeResource extends Resource
 {
@@ -26,9 +27,12 @@ class EmployeeResource extends Resource
     {
         return $form
             ->schema([
+                Forms\Components\Hidden::make('user_id')->default(Auth::id()),
                 Forms\Components\TextInput::make('name'),
                 Forms\Components\TextInput::make('title'),
-                Forms\Components\TextInput::make('phone'),
+                Forms\Components\TextInput::make('phone')
+                    ->numeric()
+                    ->mask(fn (Forms\Components\TextInput\Mask $mask) => $mask->pattern('+{855}(000)000-00-00')),
                 Forms\Components\Select::make('sex')
                 ->options([
                     '0' => 'Male',
@@ -40,7 +44,8 @@ class EmployeeResource extends Resource
                     ->minDate(now()->subYears(22))
                     ->maxDate(now()),
                 DatePicker::make('started'),
-                Forms\Components\TextInput::make('salary'),
+                Forms\Components\TextInput::make('salary')
+                    ->mask(fn (Forms\Components\TextInput\Mask $mask) => $mask->money('$', ',', 2)),
                 FileUpload::make('image'),
 
             ]);
@@ -59,7 +64,7 @@ class EmployeeResource extends Resource
                         '1' => 'Female',
                     ]),
                 Tables\Columns\TextColumn::make('started')->date('d M Y'),
-                Tables\Columns\TextColumn::make('salary'),
+                Tables\Columns\TextColumn::make('salary')->money('USD', ',', 2),
 
             ])
             ->filters([

@@ -21,7 +21,9 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Livewire\TemporaryUploadedFile;
 
 class FeedResource extends Resource
 {
@@ -38,6 +40,7 @@ class FeedResource extends Resource
                 Card::make()
                     ->schema([
                         Group::make([
+                            Forms\Components\Hidden::make('user_id')->default(Auth::id()),
                             TextInput::make('title')
                                 ->reactive()
                                 ->afterStateUpdated(function (Closure $set, $state) {
@@ -45,10 +48,18 @@ class FeedResource extends Resource
                                 })->required(),
                             TextInput::make('slug')
                                 ->disabled()
+                                ->unique()
                                 ->required(),
                         ])->columns(2),
                         Forms\Components\FileUpload::make('image')
-                            ->required(),
+                            ->required()
+                            ->getUploadedFileNameForStorageUsing(function (TemporaryUploadedFile $file
+                            ): string {
+                                $fileName = $file->hashName();
+                                $name = explode('.', $fileName);
+
+                                return (string) str('images/FeesPost'.date_format(now(), 'FY').$name[0]);
+                            }),
                         Forms\Components\RichEditor::make('description')
                             ->required(),
                     ])->columnSpan([
@@ -64,7 +75,7 @@ class FeedResource extends Resource
                             ->label('Last Updated'),
                     ]),
                     Card::make([
-                        Toggle::make('is_public')
+                        Toggle::make('is_public')->default(1)
                             ->label('Public')
                             ->onIcon('heroicon-s-eye')
                             ->offIcon('heroicon-s-eye-off'),
@@ -81,7 +92,7 @@ class FeedResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('image')->sortable(),
+                Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('title')->sortable()->searchable()->limit(15),
                 TextColumn::make('slug')
                     ->limit(20)
