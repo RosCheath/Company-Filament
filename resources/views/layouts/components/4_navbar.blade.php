@@ -3,9 +3,11 @@
     class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0"
 >
     <a href="{{url('/')}}" class="navbar-brand d-flex align-items-center">
-        <h1 class="m-0">
-            <i class="fa fa-building text-primary me-3"></i>APEX
-        </h1>
+        <h4 class="m-0">
+{{--            <i class="logo.ico text-primary me-3"></i>--}}
+            <img src="{{asset('logo.png')}}" alt="Image"/>
+            {{config('app.name')}}
+        </h4>
     </a>
     <button
         type="button"

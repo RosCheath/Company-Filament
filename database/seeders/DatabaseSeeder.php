@@ -16,6 +16,10 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             TopbarSeeder::class,
+            UserSeeder::class,
+            HomeCarouselSeeder::class,
+            AboutCarouselSeeder::class,
+            AboutUsSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
 

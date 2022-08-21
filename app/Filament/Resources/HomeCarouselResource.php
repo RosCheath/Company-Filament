@@ -21,7 +21,7 @@ class HomeCarouselResource extends Resource
 
     protected static ?string $navigationGroup = 'Home Page Settings';
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-photograph';
 
     public static function form(Form $form): Form
     {

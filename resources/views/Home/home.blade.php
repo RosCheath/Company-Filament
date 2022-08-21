@@ -8,7 +8,11 @@
                 @foreach($carousel as $carousels)
                     @if ($loop->index == 0)
                 <div class="carousel-item active">
-                    <img class="w-100" src="{{asset('storage/'. $carousels->image)}}" alt="Image"/>
+                    @if($carousels->image === 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg')
+                        <img class="w-100" src="{{$carousels->image}}" alt="Image"/>
+                    @else
+                        <img class="w-100" src="{{asset('storage/'. $carousels->image)}}" alt="Image"/>
+                    @endif
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">
@@ -32,9 +36,6 @@
                                             Industrial
                                         </li>
                                     </ol>
-                                    <a href="" class="btn btn-primary py-3 px-5"
-                                    >More Details</a
-                                    >
                                 </div>
                             </div>
                         </div>
@@ -42,7 +43,11 @@
                 </div>
                     @else
                 <div class="carousel-item">
-                    <img class="w-100" src="{{asset('storage/'. $carousels->image)}}" alt="Image"/>
+                    @if($carousels->image === 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg')
+                        <img class="w-100" src="{{$carousels->image}}" alt="Image"/>
+                    @else
+                        <img class="w-100" src="{{asset('storage/'. $carousels->image)}}" alt="Image"/>
+                    @endif
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">
@@ -108,7 +113,7 @@
                                 class="d-flex flex-column justify-content-center text-center bg-primary h-100 p-3"
                             >
                                 <h1 class="text-white">25</h1>
-                                <h2 class="text-white">Years</h2>
+{{--                                <h2 class="text-white">Years</h2>--}}
                                 <h5 class="text-white mb-0">Experience</h5>
                             </div>
                         </div>

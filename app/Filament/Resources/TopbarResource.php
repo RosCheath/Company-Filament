@@ -16,7 +16,7 @@ class TopbarResource extends Resource
 
     protected static ?string $navigationGroup = 'Front Settings';
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-cube-transparent';
 
     public static function form(Form $form): Form
     {
