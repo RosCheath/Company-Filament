@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\HomeCarouselResource\Pages;
-use App\Filament\Resources\HomeCarouselResource\RelationManagers;
 use App\Models\Home_Carousel;
 use Filament\Forms;
 use Filament\Forms\Components\Toggle;
@@ -12,8 +11,6 @@ use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\BooleanColumn;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class HomeCarouselResource extends Resource
 {
@@ -74,8 +71,8 @@ class HomeCarouselResource extends Resource
     {
         return [
             'index' => Pages\ListHomeCarousels::route('/'),
-//            'create' => Pages\CreateHomeCarousel::route('/create'),
-//            'edit' => Pages\EditHomeCarousel::route('/{record}/edit'),
+            //            'create' => Pages\CreateHomeCarousel::route('/create'),
+            //            'edit' => Pages\EditHomeCarousel::route('/{record}/edit'),
         ];
     }
 }

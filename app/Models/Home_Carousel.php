@@ -9,7 +9,7 @@ class Home_Carousel extends Model
 {
     use HasFactory;
 
-    protected $fillable =[
-        'image','title','is_public'
+    protected $fillable = [
+        'image', 'title', 'is_public',
     ];
 }

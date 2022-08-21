@@ -3,15 +3,12 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\AboutCarouselResource\Pages;
-use App\Filament\Resources\AboutCarouselResource\RelationManagers;
 use App\Models\AboutCarousel;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class AboutCarouselResource extends Resource
 {
@@ -45,7 +42,7 @@ class AboutCarouselResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-//                Tables\Actions\DeleteBulkAction::make(),
+                //                Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
 
@@ -60,8 +57,8 @@ class AboutCarouselResource extends Resource
     {
         return [
             'index' => Pages\ListAboutCarousels::route('/'),
-//            'create' => Pages\CreateAboutCarousel::route('/create'),
-//            'edit' => Pages\EditAboutCarousel::route('/{record}/edit'),
+            //            'create' => Pages\CreateAboutCarousel::route('/create'),
+            //            'edit' => Pages\EditAboutCarousel::route('/{record}/edit'),
         ];
     }
 }

@@ -3,7 +3,6 @@
 namespace App\Filament\Resources\HomeCarouselResource\Pages;
 
 use App\Filament\Resources\HomeCarouselResource;
-use Filament\Pages\Actions;
 use Filament\Resources\Pages\CreateRecord;
 
 class CreateHomeCarousel extends CreateRecord

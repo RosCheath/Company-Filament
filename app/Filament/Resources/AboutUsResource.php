@@ -3,15 +3,12 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\AboutUsResource\Pages;
-use App\Filament\Resources\AboutUsResource\RelationManagers;
 use App\Models\AboutUs;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class AboutUsResource extends Resource
 {
@@ -44,11 +41,10 @@ class AboutUsResource extends Resource
                         ])->columnSpan([
                             12,
                             'lg' => 3,
-                            ]),
+                        ]),
                     ])->columns(12),
 
             ])->columns(1);
-
     }
 
     public static function table(Table $table): Table
@@ -66,7 +62,7 @@ class AboutUsResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-//                Tables\Actions\DeleteBulkAction::make(),
+                //                Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
 
@@ -81,7 +77,7 @@ class AboutUsResource extends Resource
     {
         return [
             'index' => Pages\ListAboutUs::route('/'),
-//            'create' => Pages\CreateAboutUs::route('/create'),
+            //            'create' => Pages\CreateAboutUs::route('/create'),
             'edit' => Pages\EditAboutUs::route('/{record}/edit'),
         ];
     }
