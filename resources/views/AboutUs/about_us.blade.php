@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-    <title>{{config('app.name')}} -> About Us</title>
+    @section('title','-> About Us')
     <!-- Page Header Start -->
     <div
         class="container-fluid page-header py-5 mb-5 wow fadeIn"

@@ -48,7 +48,6 @@ class FeedResource extends Resource
                                 })->required(),
                             TextInput::make('slug')
                                 ->disabled()
-                                ->unique()
                                 ->required(),
                         ])->columns(2),
                         Forms\Components\FileUpload::make('image')

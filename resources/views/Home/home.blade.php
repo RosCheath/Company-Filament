@@ -1,70 +1,70 @@
 @extends('layouts.master')
 @section('content')
-    <title>{{config('app.name')}} -> Home</title>
+    @section('title','-> Home')
     <!-- Carousel Start -->
     <div class="container-fluid p-0 mb-5 wow fadeIn" data-wow-delay="0.1s">
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 @foreach($carousel as $carousels)
                     @if ($loop->index == 0)
-                <div class="carousel-item active">
-                    @if($carousels->image === 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg')
-                        <img class="w-100" src="{{$carousels->image}}" alt="Image"/>
-                    @else
-                        <img class="w-100" src="{{asset('storage/'. $carousels->image)}}" alt="Image"/>
-                    @endif
-                    <div class="carousel-caption">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-12 col-lg-10">
-                                    <h5
-                                        class="text-light text-uppercase mb-3 animated slideInDown"
-                                    >
-                                        Welcome to {{config('app.name')}}
-                                    </h5>
-                                    <h1 class="display-2 text-light mb-3 animated slideInDown">
-                                        {{$carousels->title}}
-                                    </h1>
-                                    <ol class="breadcrumb mb-4 pb-2">
-                                        <li class="breadcrumb-item fs-5 text-light">
-                                            Commercial
-                                        </li>
-                                        <li class="breadcrumb-item fs-5 text-light">
-                                            Residential
-                                        </li>
-                                        <li class="breadcrumb-item fs-5 text-light">
-                                            Industrial
-                                        </li>
-                                    </ol>
+                        <div class="carousel-item active">
+                            @if($carousels->image === 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg')
+                                <img class="w-100" src="{{$carousels->image}}" alt="Image"/>
+                            @else
+                                <img class="w-100" src="{{asset('storage/'. $carousels->image)}}" alt="Image"/>
+                            @endif
+                            <div class="carousel-caption">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-12 col-lg-10">
+                                            <h5
+                                                class="text-light text-uppercase mb-3 animated slideInDown"
+                                            >
+                                                Welcome to {{config('app.name')}}
+                                            </h5>
+                                            <h1 class="display-2 text-light mb-3 animated slideInDown">
+                                                {{$carousels->title}}
+                                            </h1>
+                                            <ol class="breadcrumb mb-4 pb-2">
+                                                <li class="breadcrumb-item fs-5 text-light">
+                                                    Commercial
+                                                </li>
+                                                <li class="breadcrumb-item fs-5 text-light">
+                                                    Residential
+                                                </li>
+                                                <li class="breadcrumb-item fs-5 text-light">
+                                                    Industrial
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
                     @else
-                <div class="carousel-item">
-                    @if($carousels->image === 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg')
-                        <img class="w-100" src="{{$carousels->image}}" alt="Image"/>
-                    @else
-                        <img class="w-100" src="{{asset('storage/'. $carousels->image)}}" alt="Image"/>
-                    @endif
-                    <div class="carousel-caption">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-12 col-lg-10">
-                                    <h5
-                                        class="text-light text-uppercase mb-3 animated slideInDown"
-                                    >
-                                        Welcome to Apex
-                                    </h5>
-                                    <h1 class="display-2 text-light mb-3 animated slideInDown">
-                                        {{$carousels->title}}
-                                    </h1>
+                        <div class="carousel-item">
+                            @if($carousels->image === 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg')
+                                <img class="w-100" src="{{$carousels->image}}" alt="Image"/>
+                            @else
+                                <img class="w-100" src="{{asset('storage/'. $carousels->image)}}" alt="Image"/>
+                            @endif
+                            <div class="carousel-caption">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-12 col-lg-10">
+                                            <h5
+                                                class="text-light text-uppercase mb-3 animated slideInDown"
+                                            >
+                                                Welcome to Apex
+                                            </h5>
+                                            <h1 class="display-2 text-light mb-3 animated slideInDown">
+                                                {{$carousels->title}}
+                                            </h1>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
                     @endif
                 @endforeach
             </div>
@@ -113,7 +113,7 @@
                                 class="d-flex flex-column justify-content-center text-center bg-primary h-100 p-3"
                             >
                                 <h1 class="text-white">25</h1>
-{{--                                <h2 class="text-white">Years</h2>--}}
+                                {{--                                <h2 class="text-white">Years</h2>--}}
                                 <h5 class="text-white mb-0">Experience</h5>
                             </div>
                         </div>
@@ -167,17 +167,22 @@
     <!-- About End -->
 
     <!-- Facts Start -->
+
     <div class="container-fluid my-5 p-0">
         <div class="row g-0">
-            <div class="col-xl-3 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+            @foreach($HomeFeed as $hf)
+            <div class="col-xl-3 col-sm-6 wow fadeIn" @if($loop->index+1 ==1) data-wow-delay="0.1s" @elseif($loop->index+1 ==2) data-wow-delay="0.3s" @elseif($loop->index+1 ==3) data-wow-delay="0.5s" @else data-wow-delay="0.5s" @endif >
                 <div class="position-relative">
-                    <img class="img-fluid w-100" src="{{asset('asset/img/fact-1.jpg')}}" alt=""/>
+                    <img class="img-fluid w-100" src="{{asset('storage/' . $hf->image)}}" alt=""/>
                     <div class="facts-overlay">
-                        <h1 class="display-1">01</h1>
+                        <h1 class="display-1">0{{$loop->index+1}}</h1>
                         <h4 class="text-white mb-3">Construction</h4>
-                        <p class="text-white">
-                            Aliqu diam amet diam et eos erat ipsum lorem stet lorem sit
-                            clita duo justo erat amet
+                        <p class="text-white" style="overflow: hidden;
+                                                     text-overflow: ellipsis;
+                                                     display: -webkit-box;
+                                                     -webkit-line-clamp: 3; /* number of lines to show */
+                                                     -webkit-box-orient: vertical;">
+                            {{$hf->description}}
                         </p>
                         <a class="text-white small" href=""
                         >READ MORE<i class="fa fa-arrow-right ms-3"></i
@@ -185,56 +190,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-sm-6 wow fadeIn" data-wow-delay="0.3s">
-                <div class="position-relative">
-                    <img class="img-fluid w-100" src="{{asset('asset/img/fact-2.jpg')}}" alt=""/>
-                    <div class="facts-overlay">
-                        <h1 class="display-1">02</h1>
-                        <h4 class="text-white mb-3">Mechanical</h4>
-                        <p class="text-white">
-                            Aliqu diam amet diam et eos erat ipsum lorem stet lorem sit
-                            clita duo justo erat amet
-                        </p>
-                        <a class="text-white small" href=""
-                        >READ MORE<i class="fa fa-arrow-right ms-3"></i
-                            ></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 wow fadeIn" data-wow-delay="0.5s">
-                <div class="position-relative">
-                    <img class="img-fluid w-100" src="{{asset('asset/img/fact-3.jpg')}}" alt=""/>
-                    <div class="facts-overlay">
-                        <h1 class="display-1">03</h1>
-                        <h4 class="text-white mb-3">Architecture</h4>
-                        <p class="text-white">
-                            Aliqu diam amet diam et eos erat ipsum lorem stet lorem sit
-                            clita duo justo erat amet
-                        </p>
-                        <a class="text-white small" href=""
-                        >READ MORE<i class="fa fa-arrow-right ms-3"></i
-                            ></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 wow fadeIn" data-wow-delay="0.7s">
-                <div class="position-relative">
-                    <img class="img-fluid w-100" src="{{asset('asset/img/fact-4.jpg')}}" alt=""/>
-                    <div class="facts-overlay">
-                        <h1 class="display-1">04</h1>
-                        <h4 class="text-white mb-3">Interior Design</h4>
-                        <p class="text-white">
-                            Aliqu diam amet diam et eos erat ipsum lorem stet lorem sit
-                            clita duo justo erat amet
-                        </p>
-                        <a class="text-white small" href=""
-                        >READ MORE<i class="fa fa-arrow-right ms-3"></i
-                            ></a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
+
     <!-- Facts End -->
 
     <!-- Features Start -->
