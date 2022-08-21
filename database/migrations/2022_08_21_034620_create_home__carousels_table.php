@@ -13,16 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('feeds', function (Blueprint $table) {
+        Schema::create('home__carousels', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->string('title');
-            $table->string('slug')->unique();
-            $table->text('description');
             $table->string('image');
-            $table->boolean('is_public')->default(true);
+            $table->string('title');
+            $table->boolean('is_public')->default(true);;
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -33,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('feeds');
+        Schema::dropIfExists('home__carousels');
     }
 };

@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Home_Carousel;
+
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('Home.home');
+        $carousel = Home_Carousel::all();
+        return view('Home.home',compact('carousel'));
     }
 }
