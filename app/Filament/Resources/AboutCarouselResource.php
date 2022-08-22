@@ -23,7 +23,9 @@ class AboutCarouselResource extends Resource
         return $form
             ->schema([
                 Forms\Components\Card::make([
-                    Forms\Components\FileUpload::make('image'),
+                    Forms\Components\FileUpload::make('image')
+                        ->image()
+                        ->required(),
                 ]),
 
             ]);

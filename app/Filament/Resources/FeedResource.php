@@ -83,6 +83,7 @@ class FeedResource extends Resource
 
                                 return (string) str('images/FeesPost'.date_format(now(), 'FY').$name[0]);
                             })
+                            ->image()
                             ->required(),
                         Forms\Components\RichEditor::make('description')
                             ->required(),

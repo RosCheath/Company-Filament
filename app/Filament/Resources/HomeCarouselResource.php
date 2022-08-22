@@ -28,6 +28,7 @@ class HomeCarouselResource extends Resource
                     Forms\Components\TextInput::make('title')
                         ->required(),
                     Forms\Components\FileUpload::make('image')
+                        ->image()
                         ->required(),
                     Toggle::make('is_public')->default(1)
                         ->label('Public')

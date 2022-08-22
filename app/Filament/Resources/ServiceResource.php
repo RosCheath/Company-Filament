@@ -58,7 +58,9 @@ class ServiceResource extends Resource
                             ->offIcon('heroicon-s-eye-off'),
                     ]),
                     Forms\Components\Card::make([
-                        Forms\Components\FileUpload::make('image')->required(),
+                        Forms\Components\FileUpload::make('image')
+                            ->image()
+                            ->required(),
                     ]),
                 ])->columnSpan([
                     12,

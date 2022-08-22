@@ -41,9 +41,10 @@ class AboutUsResource extends Resource
                     ->schema([
                         Forms\Components\Group::make([
                             Forms\Components\Card::make([
-                                Forms\Components\TextInput::make('title'),
-                                Forms\Components\TextInput::make('detail'),
-                                Forms\Components\RichEditor::make('description')
+                                Forms\Components\TextInput::make('title')->required(),
+                                Forms\Components\TextInput::make('detail')->maxLength(40)
+                                ->required(),
+                                Forms\Components\MarkdownEditor::make('description')
                                     ->required(),
                             ]),
                         ])->columnSpan([
@@ -52,7 +53,9 @@ class AboutUsResource extends Resource
                         ]),
 
                         Forms\Components\Card::make([
-                            Forms\Components\FileUpload::make('image'),
+                            Forms\Components\FileUpload::make('image')
+                            ->image()
+                            ->required(),
                         ])->columnSpan([
                             12,
                             'lg' => 3,

@@ -53,7 +53,9 @@ class AboutTeamResource extends Resource
                         Forms\Components\TextInput::make('name')->required(),
                         Forms\Components\TextInput::make('position')->required(),
                     ])->columns(2),
-                    Forms\Components\FileUpload::make('image')->required(),
+                    Forms\Components\FileUpload::make('image')
+                        ->image()
+                        ->required(),
                 ]),
             ]);
     }

@@ -23,8 +23,13 @@ class TopbarResource extends Resource
         return $form
             ->schema([
                 Forms\Components\Card::make([
-                    Forms\Components\TextInput::make('phone'),
-                    Forms\Components\TextInput::make('email'),
+                    Forms\Components\TextInput::make('phone')
+                        ->numeric()
+                        ->mask(fn(Forms\Components\TextInput\Mask $mask) => $mask->pattern('+{855}(000)000-00-00'))
+                        ->rule('number')
+                        ->required(),
+                    Forms\Components\TextInput::make('email')->email()
+                        ->required(),
                     Forms\Components\Select::make('date_start')
                         ->options([
                             'Monday' => 'Monday',
@@ -34,7 +39,7 @@ class TopbarResource extends Resource
                             'Friday' => 'Friday',
                             'Saturday' => 'Saturday',
                             'Sunday' => 'Sunday',
-                        ]),
+                        ])->required(),
                     Forms\Components\Select::make('date_end')
                         ->options([
                             'Monday' => 'Monday',
@@ -44,7 +49,7 @@ class TopbarResource extends Resource
                             'Friday' => 'Friday',
                             'Saturday' => 'Saturday',
                             'Sunday' => 'Sunday',
-                        ]),
+                        ])->required(),
                     Forms\Components\Select::make('time_start')
                         ->options([
                             '1:00 AM' => '1:00 AM',
@@ -98,7 +103,8 @@ class TopbarResource extends Resource
                             '12:30 PM' => '12:30 PM',
 
                         ])
-                        ->searchable(),
+                        ->searchable()
+                        ->required(),
                     Forms\Components\Select::make('time_end')
                         ->options([
                             '1:00 AM' => '1:00 AM',
@@ -152,7 +158,8 @@ class TopbarResource extends Resource
                             '12:30 PM' => '12:30 PM',
 
                         ])
-                        ->searchable(),
+                        ->searchable()
+                    ->required(),
                     Forms\Components\TextInput::make('facebook_link'),
                     Forms\Components\TextInput::make('telegram_link'),
                     Forms\Components\TextInput::make('wechat_link'),

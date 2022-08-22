@@ -42,28 +42,48 @@ class EmployeeResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Hidden::make('user_id')->default(Auth::id()),
-                Forms\Components\TextInput::make('name'),
-                Forms\Components\TextInput::make('title'),
-                Forms\Components\TextInput::make('phone')
-                    ->numeric()
-                    ->mask(fn (Forms\Components\TextInput\Mask $mask) => $mask->pattern('+{855}(000)000-00-00')),
-                Forms\Components\Select::make('sex')
-                ->options([
-                    '0' => 'Male',
-                    '1' => 'Female',
-                ]),
-                FileUpload::make('cv')->acceptedFileTypes(['application/pdf', 'docx']),
-                Forms\Components\TextInput::make('address'),
-                DatePicker::make('bd')
-                    ->minDate(now()->subYears(22))
-                    ->maxDate(now()),
-                DatePicker::make('started'),
-                Forms\Components\TextInput::make('salary')
-                    ->mask(fn (Forms\Components\TextInput\Mask $mask) => $mask->money('$', ',', 2)),
-                FileUpload::make('image'),
+                Forms\Components\Group::make()
+                    ->schema([
+                        Forms\Components\Card::make()
+                            ->schema([
+                                Forms\Components\Hidden::make('user_id')->default(Auth::id()),
+                                Forms\Components\TextInput::make('name')->required(),
+                                Forms\Components\TextInput::make('title')->required(),
+                                Forms\Components\TextInput::make('phone')
+                                    ->numeric()
+                                    ->mask(fn(Forms\Components\TextInput\Mask $mask) => $mask->pattern('+{855}(000)000-00-00'))
+                                    ->rule('number')
+                                    ->required(),
+                                Forms\Components\Select::make('sex')
+                                    ->options([
+                                        '0' => 'Male',
+                                        '1' => 'Female',
+                                    ])->required(),
+                                Forms\Components\TextInput::make('address')->required(),
+                                Forms\Components\TextInput::make('salary')
+                                    ->mask(fn(Forms\Components\TextInput\Mask $mask) => $mask->money('$', ',', 2))
+                                    ->required(),
+                            ])->columns(2),
 
-            ]);
+                        Forms\Components\Card::make()
+                            ->schema([
+                                DatePicker::make('bd')
+                                    ->minDate(now()->subYears(22))
+                                    ->maxDate(now())
+                                ->required(),
+                                DatePicker::make('started')->required(),
+                            ]),
+                    ])->columnSpan(2),
+
+
+                Forms\Components\Card::make()
+                    ->schema([
+                        FileUpload::make('cv')->acceptedFileTypes(['application/pdf', 'docx']),
+                        FileUpload::make('image'),
+                    ])->columnSpan(1),
+
+
+            ])->columns(3);
     }
 
     public static function table(Table $table): Table
