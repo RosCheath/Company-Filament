@@ -110,7 +110,7 @@
                             style="width: 200px; height: 200px"
                         >
                             <div
-                                class="d-flex flex-column justify-content-center text-center bg-primary h-100 p-3"
+                                class="d-flex flex-column justify-content-center text-center bg-warning h-100 p-3"
                             >
                                 <h1 class="text-white">25</h1>
                                 {{--                                <h2 class="text-white">Years</h2>--}}

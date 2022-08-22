@@ -1,9 +1,10 @@
 /********** Template CSS **********/
 :root {
-    --primary: #FDA12B;
     --secondary: #8D9297;
     --light: #F8F9FA;
     --dark: #182333;
+    --mainColor: #50A9F6;
+    --main2Color: #F65056;
 }
 
 .back-to-top {
@@ -36,8 +37,8 @@
     transition: .5s;
 }
 
-.btn.btn-primary,
-.btn.btn-outline-primary:hover {
+.btn.bt--mainColor,
+.btn.btn-outlin--mainColor:hover {
     color: #FFFFFF;
 }
 
@@ -84,7 +85,7 @@
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
-    color: var(--primary);
+    color: var(--mainColor);
 }
 
 .navbar .dropdown-toggle::after {
@@ -160,7 +161,7 @@
     content: "\f111";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    color: var(--primary);
+    color: var(--mainColor);
 }
 
 @media (max-width: 768px) {
@@ -210,11 +211,11 @@
 .facts-overlay h1 {
     font-size: 120px;
     color: transparent;
-    -webkit-text-stroke: 2px var(--primary);
+    -webkit-text-stroke: 2px var(--mainColor);
 }
 
 .facts-overlay a:hover {
-    color: var(--primary) !important;
+    color: var(--mainColor) !important;
 }
 
 
@@ -226,7 +227,7 @@
     height: 0;
     top: 0;
     left: 0;
-    background: var(--primary);
+    background: var(--mainColor);
     opacity: 0;
     transition: .5s;
 }
@@ -297,7 +298,7 @@
     align-items: center;
     justify-content: center;
     color: var(--dark);
-    border: 2px solid var(--primary);
+    border: 2px solid var(--mainColor);
     border-radius: 50px;
     font-size: 18px;
     transition: .5s;
@@ -306,7 +307,7 @@
 .testimonial-carousel .owl-nav .owl-prev:hover,
 .testimonial-carousel .owl-nav .owl-next:hover {
     color: #FFFFFF;
-    background: var(--primary);
+    background: var(--mainColor);
 }
 
 
@@ -352,5 +353,5 @@
 }
 
 .footer .copyright a:hover {
-    color: var(--primary);
+    color: var(--mainColor);
 }
