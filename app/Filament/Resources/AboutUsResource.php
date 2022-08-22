@@ -16,7 +16,7 @@ class AboutUsResource extends Resource
 
     protected static ?string $navigationGroup = 'AboutUs Page Settings';
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-identification';
 
     public static function form(Form $form): Form
     {

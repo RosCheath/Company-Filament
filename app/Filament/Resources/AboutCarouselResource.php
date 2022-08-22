@@ -16,7 +16,7 @@ class AboutCarouselResource extends Resource
 
     protected static ?string $navigationGroup = 'AboutUs Page Settings';
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-photograph';
 
     public static function form(Form $form): Form
     {
@@ -42,7 +42,7 @@ class AboutCarouselResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                //                Tables\Actions\DeleteBulkAction::make(),
+                //Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
 

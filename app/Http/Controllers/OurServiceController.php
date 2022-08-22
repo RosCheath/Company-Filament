@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Service;
+
 class OurServiceController extends Controller
 {
     public function index()
     {
-        return view('OurServices.our_services');
+        $servic = Service::latest()->get();
+        return view('OurServices.our_services',compact('servic'));
     }
 }

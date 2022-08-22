@@ -31,6 +31,8 @@ class FeedResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'title';
 
+    protected static ?string $navigationGroup = 'Post Feed Settings';
+
     protected static ?string $navigationIcon = 'heroicon-o-rss';
 
     public static function form(Form $form): Form
@@ -51,14 +53,14 @@ class FeedResource extends Resource
                                 ->required(),
                         ])->columns(2),
                         Forms\Components\FileUpload::make('image')
-                            ->required()
                             ->getUploadedFileNameForStorageUsing(function (TemporaryUploadedFile $file
                             ): string {
                                 $fileName = $file->hashName();
                                 $name = explode('.', $fileName);
 
                                 return (string) str('images/FeesPost'.date_format(now(), 'FY').$name[0]);
-                            }),
+                            })
+                            ->required(),
                         Forms\Components\RichEditor::make('description')
                             ->required(),
                     ])->columnSpan([

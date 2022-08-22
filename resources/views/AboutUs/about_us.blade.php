@@ -116,42 +116,24 @@
                         <h1 class="display-6 mb-0">Our Expert Worker</h1>
                     </div>
                 </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <p class="mb-0">
-                        Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
-                        diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet
-                        lorem sit clita duo justo magna dolore erat amet
-                    </p>
-                </div>
             </div>
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                @foreach($about_team as $at)
+                <div class="col-lg-4 col-md-6 wow fadeInUp"
+                     data-wow-delay="0.{{2+$loop->index+3}}s">
                     <div class="team-item position-relative">
-                        <img class="img-fluid" src="img/team-1.jpg" alt="" />
+                        @if($at->image ==='https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg')
+                        <img class="img-fluid" src="{{$at->image}}" alt="" />
+                        @else
+                            <img class="img-fluid" src="{{asset('storage/') . $at->image}}" alt="" />
+                        @endif
                         <div class="team-text bg-white p-4">
-                            <h5>Full Name</h5>
-                            <span>Engineer</span>
+                            <h5>{{$at->name}}</h5>
+                            <span>{{$at->position}}</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item position-relative">
-                        <img class="img-fluid" src="img/team-2.jpg" alt="" />
-                        <div class="team-text bg-white p-4">
-                            <h5>Full Name</h5>
-                            <span>Engineer</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item position-relative">
-                        <img class="img-fluid" src="img/team-3.jpg" alt="" />
-                        <div class="team-text bg-white p-4">
-                            <h5>Full Name</h5>
-                            <span>Engineer</span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

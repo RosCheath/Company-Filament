@@ -171,7 +171,7 @@
     <div class="container-fluid my-5 p-0">
         <div class="row g-0">
             @foreach($HomeFeed as $hf)
-            <div class="col-xl-3 col-sm-6 wow fadeIn" @if($loop->index+1 ==1) data-wow-delay="0.1s" @elseif($loop->index+1 ==2) data-wow-delay="0.3s" @elseif($loop->index+1 ==3) data-wow-delay="0.5s" @else data-wow-delay="0.5s" @endif >
+            <div class="col-xl-3 col-sm-6 wow fadeIn" data-wow-delay="0.{{2+$loop->index+3}}s" >
                 <div class="position-relative">
                     <img class="img-fluid w-100" src="{{asset('storage/' . $hf->image)}}" alt=""/>
                     <div class="facts-overlay">
