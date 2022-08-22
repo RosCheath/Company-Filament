@@ -3,7 +3,6 @@
 namespace App\Filament\Resources\AboutTeamResource\Pages;
 
 use App\Filament\Resources\AboutTeamResource;
-use Filament\Pages\Actions;
 use Filament\Resources\Pages\CreateRecord;
 
 class CreateAboutTeam extends CreateRecord

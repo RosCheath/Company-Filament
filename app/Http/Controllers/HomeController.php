@@ -11,6 +11,7 @@ class HomeController extends Controller
     {
         $carousel = Home_Carousel::all()->where('is_public', '=', '1');
         $HomeFeed = Feed::where('is_public', '1')->latest()->paginate(4);
-        return view('Home.home', compact('carousel','HomeFeed'));
+
+        return view('Home.home', compact('carousel', 'HomeFeed'));
     }
 }

@@ -9,10 +9,25 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Illuminate\Database\Eloquent\Model;
 
 class AboutUsResource extends Resource
 {
     protected static ?string $model = AboutUs::class;
+
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['title', 'detail', 'description'];
+    }
+
+    public static function getGlobalSearchResultDetails(Model $record): array
+    {
+        return [
+            'Title' => $record->title,
+            'Detail' => $record->slug,
+            'Description' => $record->description,
+        ];
+    }
 
     protected static ?string $navigationGroup = 'AboutUs Page Settings';
 

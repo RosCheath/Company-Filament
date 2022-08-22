@@ -25,6 +25,7 @@ class TopbarSeeder extends Seeder
             //            'telegram_link' => 'monday',
             //            'wechat_link' => 'monday',
             //            'line_link' => 'monday',
+            'footer_image' => 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg',
 
         ]);
     }

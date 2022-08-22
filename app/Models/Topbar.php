@@ -11,6 +11,6 @@ class Topbar extends Model
 
     protected $fillable = [
         'phone', 'email', 'date_start', 'date_end', 'time_start', 'time_end',
-        'facebook_link', 'telegram_link', 'wechat_link', 'line_link',
+        'facebook_link', 'telegram_link', 'wechat_link', 'line_link', 'footer_image',
     ];
 }

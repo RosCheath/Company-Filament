@@ -9,6 +9,7 @@ class OurServiceController extends Controller
     public function index()
     {
         $servic = Service::latest()->get();
-        return view('OurServices.our_services',compact('servic'));
+
+        return view('OurServices.our_services', compact('servic'));
     }
 }

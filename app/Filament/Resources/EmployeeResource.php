@@ -12,12 +12,27 @@ use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Facades\Auth;
 
 class EmployeeResource extends Resource
 {
     protected static ?string $model = Employee::class;
+
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['name', 'title', 'phone'];
+    }
+
+    public static function getGlobalSearchResultDetails(Model $record): array
+    {
+        return [
+            'Name' => $record->name,
+            'Title' => $record->title,
+            'Phone' => $record->phone,
+        ];
+    }
 
     protected static ?int $navigationSort = 2;
 

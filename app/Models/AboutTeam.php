@@ -11,7 +11,7 @@ class AboutTeam extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable= [
-        'name','position','image'
+    protected $fillable = [
+        'name', 'position', 'image',
     ];
 }

@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ServiceResource\Pages;
-use App\Filament\Resources\ServiceResource\RelationManagers;
 use App\Models\Service;
 use Filament\Forms;
 use Filament\Forms\Components\Card;
@@ -14,11 +13,25 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\BooleanColumn;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ServiceResource extends Resource
 {
     protected static ?string $model = Service::class;
+
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['title', 'description'];
+    }
+
+    public static function getGlobalSearchResultDetails(Model $record): array
+    {
+        return [
+            'Title' => $record->title,
+            'Description' => $record->description,
+        ];
+    }
 
     protected static ?string $navigationGroup = 'Service Settings';
 
@@ -45,7 +58,7 @@ class ServiceResource extends Resource
                             ->offIcon('heroicon-s-eye-off'),
                     ]),
                     Forms\Components\Card::make([
-                        Forms\Components\FileUpload::make('image')->required()
+                        Forms\Components\FileUpload::make('image')->required(),
                     ]),
                 ])->columnSpan([
                     12,

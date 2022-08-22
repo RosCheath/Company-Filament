@@ -25,8 +25,9 @@ class Footer extends Component
      */
     public function render()
     {
-        $servic_count = Service::all()->where('is_public',1)->count();
-        $feed_count = Feed::all()->where('is_public',1)->count();
-        return view('components.footer',compact('servic_count','feed_count'));
+        $servic_count = Service::all()->where('is_public', 1)->count();
+        $feed_count = Feed::all()->where('is_public', 1)->count();
+
+        return view('components.footer', compact('servic_count', 'feed_count'));
     }
 }

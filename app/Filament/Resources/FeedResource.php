@@ -20,6 +20,7 @@ use Filament\Tables\Columns\BooleanColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -29,9 +30,31 @@ class FeedResource extends Resource
 {
     protected static ?string $model = Feed::class;
 
-    protected static ?string $recordTitleAttribute = 'title';
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['title', 'slug', 'description'];
+    }
 
-    protected static ?string $navigationGroup = 'Post Feed Settings';
+    public static function getGlobalSearchResultDetails(Model $record): array
+    {
+        return [
+            'Title' => $record->title,
+            'Slug' => $record->slug,
+            'Description' => $record->description,
+        ];
+    }
+
+    protected static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
+    protected static function getNavigationBadgeColor(): ?string
+    {
+        return static::getModel()::count() > 0 ? 'primary' : 'danger';
+    }
+
+    protected static ?string $navigationLabel = 'Feeds Post';
 
     protected static ?string $navigationIcon = 'heroicon-o-rss';
 

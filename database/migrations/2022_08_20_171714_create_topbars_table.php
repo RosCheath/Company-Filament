@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('telegram_link')->nullable();
             $table->string('wechat_link')->nullable();
             $table->string('line_link')->nullable();
+            $table->string('footer_image');
             $table->timestamps();
         });
     }

@@ -13,6 +13,7 @@ class AboutUsController extends Controller
         $about_carousel = AboutCarousel::all();
         $about_us = AboutUs::all();
         $about_team = AboutTeam::all();
+
         return view('AboutUs.about_us', compact(
             'about_carousel',
             'about_us',
