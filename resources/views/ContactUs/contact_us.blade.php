@@ -31,45 +31,32 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5">
+                @foreach($shop_contact as $sc)
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="row g-4 align-items-center">
                         <div class="col-sm-6">
-                            <img class="img-fluid" src="img/team-1.jpg" alt="" />
+                            <img class="img-fluid" src="{{asset('storage/'.$sc->image)}}" alt="" />
                         </div>
                         <div class="col-sm-6">
-                            <h3 class="mb-0">Full Name</h3>
-                            <p>Head of Sales</p>
+                            <h3 class="mb-0">{{$sc->name}}</h3>
+                            <p>{{$sc->title}}</p>
                             <h6>Contact Details</h6>
                             <p>
-                                Lorem ipsum dolor sit amet conse elit sed eiu smod lab ore.
+                                {{$sc->detail}}
                             </p>
-                            <p class="mb-0">Call: +012 345 6789</p>
-                            <p class="mb-0">Email: sales@example.com</p>
+                            <p class="mb-0">Call: +{{$sc->phone}}</p>
+                            <p class="mb-0">Email: {{$sc->email}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="row g-4 align-items-center">
-                        <div class="col-sm-6">
-                            <img class="img-fluid" src="img/team-2.jpg" alt="" />
-                        </div>
-                        <div class="col-sm-6">
-                            <h3 class="mb-0">Full Name</h3>
-                            <p>Head of Marketing</p>
-                            <h6>Contact Details</h6>
-                            <p>
-                                Lorem ipsum dolor sit amet conse elit sed eiu smod lab ore.
-                            </p>
-                            <p class="mb-0">Call: +012 345 6789</p>
-                            <p class="mb-0">Email: sales@example.com</p>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="col-lg-6 wow fadeInUp"
-                    data-wow-delay="0.1s"
-                    style="min-height: 450px"
-                >
+                @endforeach
+            </div>
+        </div>
+    </div>
+        <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 450px">
                     <div class="position-relative h-100">
                         <iframe
                             class="position-relative w-100 h-100"

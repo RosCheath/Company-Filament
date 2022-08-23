@@ -51,8 +51,7 @@ class EmployeeResource extends Resource
                                 Forms\Components\TextInput::make('title')->required(),
                                 Forms\Components\TextInput::make('phone')
                                     ->numeric()
-                                    ->mask(fn(Forms\Components\TextInput\Mask $mask) => $mask->pattern('+{855}(000)000-00-00'))
-                                    ->rule('number')
+                                    ->mask(fn (Forms\Components\TextInput\Mask $mask) => $mask->pattern('+{855}(000)000-00-00'))
                                     ->required(),
                                 Forms\Components\Select::make('sex')
                                     ->options([
@@ -61,7 +60,7 @@ class EmployeeResource extends Resource
                                     ])->required(),
                                 Forms\Components\TextInput::make('address')->required(),
                                 Forms\Components\TextInput::make('salary')
-                                    ->mask(fn(Forms\Components\TextInput\Mask $mask) => $mask->money('$', ',', 2))
+                                    ->mask(fn (Forms\Components\TextInput\Mask $mask) => $mask->money('$', ',', 2))
                                     ->required(),
                             ])->columns(2),
 
@@ -75,13 +74,11 @@ class EmployeeResource extends Resource
                             ]),
                     ])->columnSpan(2),
 
-
                 Forms\Components\Card::make()
                     ->schema([
                         FileUpload::make('cv')->acceptedFileTypes(['application/pdf', 'docx']),
                         FileUpload::make('image'),
                     ])->columnSpan(1),
-
 
             ])->columns(3);
     }

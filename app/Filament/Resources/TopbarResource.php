@@ -16,6 +16,8 @@ class TopbarResource extends Resource
 
     protected static ?string $navigationGroup = 'Front Settings';
 
+    protected static ?string $navigationLabel = 'Topbar and Footer';
+
     protected static ?string $navigationIcon = 'heroicon-o-cube-transparent';
 
     public static function form(Form $form): Form
@@ -25,8 +27,7 @@ class TopbarResource extends Resource
                 Forms\Components\Card::make([
                     Forms\Components\TextInput::make('phone')
                         ->numeric()
-                        ->mask(fn(Forms\Components\TextInput\Mask $mask) => $mask->pattern('+{855}(000)000-00-00'))
-                        ->rule('number')
+                        ->mask(fn (Forms\Components\TextInput\Mask $mask) => $mask->pattern('+{855}(000)000-00-00'))
                         ->required(),
                     Forms\Components\TextInput::make('email')->email()
                         ->required(),
@@ -164,6 +165,10 @@ class TopbarResource extends Resource
                     Forms\Components\TextInput::make('telegram_link'),
                     Forms\Components\TextInput::make('wechat_link'),
                     Forms\Components\TextInput::make('line_link'),
+                    Forms\Components\Card::make([
+                        Forms\Components\FileUpload::make('footer_image')->image()
+                        ->required(),
+                    ]),
                 ])
                     ->columns(2),
 

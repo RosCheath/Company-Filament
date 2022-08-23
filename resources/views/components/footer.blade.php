@@ -1,10 +1,19 @@
 <div>
     <!-- Footer Start -->
     <div
+        @foreach($footer as $fi)
+            @if($fi->footer_image === 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg')
         class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn"
         data-wow-delay="0.1s"
         style="background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url(https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg) center center no-repeat;"
     >
+        @else
+            class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn"
+            data-wow-delay="0.1s"
+            style="background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url({{asset('storage/'. $fi->footer_image)}}) center center no-repeat;"
+            >
+        @endif
+        @endforeach
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
@@ -18,8 +27,10 @@
                     <p>
                         <i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA
                     </p>
-                    <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    @foreach($footer as $footer)
+                    <p><i class="fa fa-phone-alt me-3"></i>+{{$footer->phone}}</p>
+                    <p><i class="fa fa-envelope me-3"></i>{{$footer->email}}</p>
+                    @endforeach
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Quick Links</h4>

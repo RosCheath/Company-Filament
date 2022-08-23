@@ -4,6 +4,7 @@ namespace App\View\Components;
 
 use App\Models\Feed;
 use App\Models\Service;
+use App\Models\Topbar;
 use Illuminate\View\Component;
 
 class Footer extends Component
@@ -27,7 +28,12 @@ class Footer extends Component
     {
         $servic_count = Service::all()->where('is_public', 1)->count();
         $feed_count = Feed::all()->where('is_public', 1)->count();
+        $footer = Topbar::all();
 
-        return view('components.footer', compact('servic_count', 'feed_count'));
+        return view('components.footer', compact(
+            'servic_count',
+            'feed_count',
+            'footer'
+        ));
     }
 }
