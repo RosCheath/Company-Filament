@@ -33,7 +33,7 @@ class ShopContactResource extends Resource
                                 ->required(),
                             Forms\Components\TextInput::make('phone')
                                 ->numeric()
-                                ->mask(fn(Forms\Components\TextInput\Mask $mask) => $mask->pattern('+{855}(000)000-00-00'))
+                                ->mask(fn (Forms\Components\TextInput\Mask $mask) => $mask->pattern('+{855}(000)000-00-00'))
                                 ->required(),
                             Forms\Components\TextInput::make('email')
                                 ->email()

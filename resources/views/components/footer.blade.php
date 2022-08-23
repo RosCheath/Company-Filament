@@ -5,7 +5,7 @@
             @if($fi->footer_image === 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg')
         class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn"
         data-wow-delay="0.1s"
-        style="background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url(https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg) center center no-repeat;"
+        style="background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url({{$fi->footer_image}}) center center no-repeat;"
     >
         @else
             class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn"
@@ -25,7 +25,7 @@
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Address</h4>
                     <p>
-                        <i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA
+                        <i class="fa fa-map-marker-alt me-3"></i>{{$contact_location->location}}
                     </p>
                     @foreach($footer as $footer)
                     <p><i class="fa fa-phone-alt me-3"></i>+{{$footer->phone}}</p>

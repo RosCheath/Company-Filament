@@ -4,7 +4,7 @@
     <!-- Page Header Start -->
     <div
         class="container-fluid page-header py-5 mb-5 wow fadeIn"
-        style="background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url(https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg) center center no-repeat;"
+        style="background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url({{asset('storage/'. $contact_us->contact_image)}}) center center no-repeat;"
         data-wow-delay="0.1s">
         <div class="container text-center py-5">
             <h1 class="display-4 text-white animated slideInDown mb-4">
@@ -26,7 +26,7 @@
         </div>
     </div>
     <!-- Page Header End -->
-
+    <img src="{{asset('storage/').$contact_us->contact_image}}">
     <!-- Contact Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -60,7 +60,7 @@
                     <div class="position-relative h-100">
                         <iframe
                             class="position-relative w-100 h-100"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
+                            src="{{$contact_us->map}}"
                             frameborder="0"
                             style="min-height: 450px; border: 0"
                             allowfullscreen=""
@@ -73,7 +73,7 @@
                     <div class="border-start border-5 border-primary ps-4 mb-5">
                         <h6 class="text-body text-uppercase mb-2">Contact Us</h6>
                         <h1 class="display-6 mb-0">
-                            If You Have Any Query, Please Contact Us
+                            {{$contact_us->title}}
                         </h1>
                     </div>
                     <p class="mb-4">

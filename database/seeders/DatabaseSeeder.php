@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             AboutCarouselSeeder::class,
             AboutUsSeeder::class,
             AboutTeamSeeder::class,
+            ContactUsSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
 

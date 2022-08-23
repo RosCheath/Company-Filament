@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\ContactUs;
 use App\Models\Feed;
 use App\Models\Service;
 use App\Models\Topbar;
@@ -29,11 +30,13 @@ class Footer extends Component
         $servic_count = Service::all()->where('is_public', 1)->count();
         $feed_count = Feed::all()->where('is_public', 1)->count();
         $footer = Topbar::all();
+        $contact_location = ContactUs::all()->first();
 
         return view('components.footer', compact(
             'servic_count',
             'feed_count',
-            'footer'
+            'footer',
+            'contact_location'
         ));
     }
 }
