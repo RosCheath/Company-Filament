@@ -5,10 +5,10 @@
     <div
         class="container-fluid page-header py-5 mb-5 wow fadeIn"
         @foreach($about_carousel as $ac)
-            @if($ac->image === 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg')
-                style="background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url(https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg) center center no-repeat;"
+            @if($ac->about_image === 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg')
+                style="background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url({{$ac->about_image}}) center center no-repeat;"
         @else
-            style="background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url({{asset('storage/'. $ac->image)}}) center center no-repeat;"
+            style="background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url({{asset('storage/'. $ac->about_image)}}) center center no-repeat;"
         @endif
         @endforeach
 

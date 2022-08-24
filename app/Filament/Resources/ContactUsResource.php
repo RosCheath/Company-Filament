@@ -14,6 +14,8 @@ class ContactUsResource extends Resource
 {
     protected static ?string $model = ContactUs::class;
 
+    protected static ?int $navigationSort = 2;
+
     protected static ?string $navigationGroup = 'Contact Setting';
 
     protected static ?string $navigationIcon = 'heroicon-o-phone';

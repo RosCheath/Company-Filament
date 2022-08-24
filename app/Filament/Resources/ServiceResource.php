@@ -20,6 +20,8 @@ class ServiceResource extends Resource
 {
     protected static ?string $model = Service::class;
 
+    protected static ?int $navigationSort = -1;
+
     public static function getGloballySearchableAttributes(): array
     {
         return ['title', 'description'];

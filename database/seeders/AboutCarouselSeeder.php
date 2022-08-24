@@ -15,7 +15,9 @@ class AboutCarouselSeeder extends Seeder
     public function run()
     {
         DB::table('about_carousels')->insert([
-            'image' => 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg',
+            'about_image' => 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg',
+            'service_image' => 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg',
+            'feed_image' => 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg',
         ]);
     }
 }

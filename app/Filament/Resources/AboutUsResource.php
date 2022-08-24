@@ -15,6 +15,8 @@ class AboutUsResource extends Resource
 {
     protected static ?string $model = AboutUs::class;
 
+    protected static ?int $navigationSort = -1;
+
     public static function getGloballySearchableAttributes(): array
     {
         return ['title', 'detail', 'description'];

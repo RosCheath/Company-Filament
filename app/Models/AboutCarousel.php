@@ -10,6 +10,6 @@ class AboutCarousel extends Model
     use HasFactory;
 
     protected $fillable = [
-        'image',
+        'about_image', 'service_image', 'feed_image',
     ];
 }

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactMessage;
 use App\Models\ContactUs;
 use App\Models\ShopContact;
+use Illuminate\Http\Request;
 
 class ContactUsController extends Controller
 {
@@ -15,8 +17,12 @@ class ContactUsController extends Controller
         return view('ContactUs.contact_us', compact('shop_contact', 'contact_us'));
     }
 
-    public function contact()
+    public function contact(Request $request)
     {
-        return redirect()->back();
+        $input = $request->all();
+        ContactMessage::create($input);
+
+        return redirect()->back()
+            ->with('success', 'Your Contact has been send.');
     }
 }

@@ -16,7 +16,7 @@ class HomeCarouselResource extends Resource
 {
     protected static ?string $model = Home_Carousel::class;
 
-    protected static ?string $navigationGroup = 'Home Page Settings';
+    protected static ?string $navigationGroup = 'Carousel Image Settings';
 
     protected static ?string $navigationIcon = 'heroicon-o-photograph';
 

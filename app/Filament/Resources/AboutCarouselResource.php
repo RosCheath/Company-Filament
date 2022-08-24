@@ -12,9 +12,13 @@ use Filament\Tables;
 
 class AboutCarouselResource extends Resource
 {
+    protected static ?int $navigationSort = 5;
+
     protected static ?string $model = AboutCarousel::class;
 
-    protected static ?string $navigationGroup = 'AboutUs Page Settings';
+    protected static ?string $navigationGroup = 'Carousel Image Settings';
+
+    protected static ?string $navigationLabel = 'About Service Fees Carousels';
 
     protected static ?string $navigationIcon = 'heroicon-o-photograph';
 
@@ -23,7 +27,17 @@ class AboutCarouselResource extends Resource
         return $form
             ->schema([
                 Forms\Components\Card::make([
-                    Forms\Components\FileUpload::make('image')
+                    Forms\Components\FileUpload::make('about_image')
+                        ->image()
+                        ->required(),
+                ]),
+                Forms\Components\Card::make([
+                    Forms\Components\FileUpload::make('feed_image')
+                        ->image()
+                        ->required(),
+                ]),
+                Forms\Components\Card::make([
+                    Forms\Components\FileUpload::make('service_image')
                         ->image()
                         ->required(),
                 ]),
@@ -35,7 +49,9 @@ class AboutCarouselResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\ImageColumn::make('about_image'),
+                Tables\Columns\ImageColumn::make('feed_image'),
+                Tables\Columns\ImageColumn::make('service_image'),
             ])
             ->filters([
                 //

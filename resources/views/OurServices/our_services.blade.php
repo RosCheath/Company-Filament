@@ -4,7 +4,13 @@
     <!-- Page Header Start -->
     <div
         class="container-fluid page-header py-5 mb-5 wow fadeIn"
-        style="background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url(https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg) center center no-repeat;"
+        @foreach($about_carousel as $ac)
+            @if($ac->service_image === 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg')
+                style="background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url({{$ac->service_image}}) center center no-repeat;"
+        @else
+            style="background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url({{asset('storage/'. $ac->service_image)}}) center center no-repeat;"
+        @endif
+        @endforeach
         data-wow-delay="0.1s">
         <div class="container text-center py-5">
             <h1 class="display-4 text-white animated slideInDown mb-4">
