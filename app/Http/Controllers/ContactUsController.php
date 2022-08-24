@@ -23,6 +23,6 @@ class ContactUsController extends Controller
         ContactMessage::create($input);
 
         return redirect()->back()
-            ->with('success', 'Your Contact has been send.');
+            ->with('success', 'Your contact has been send.');
     }
 }
