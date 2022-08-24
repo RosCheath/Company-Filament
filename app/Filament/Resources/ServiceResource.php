@@ -3,11 +3,14 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ServiceResource\Pages;
+use App\Filament\Resources\ServiceResource\RelationManagers\AppointmentsRelationManager;
+use App\Models\Appointment;
 use App\Models\Service;
 use Filament\Forms;
 use Filament\Forms\Components\Card;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Form;
+use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
@@ -19,8 +22,6 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class ServiceResource extends Resource
 {
     protected static ?string $model = Service::class;
-
-    protected static ?int $navigationSort = -1;
 
     public static function getGloballySearchableAttributes(): array
     {
@@ -35,7 +36,16 @@ class ServiceResource extends Resource
         ];
     }
 
-    protected static ?string $navigationGroup = 'Service Settings';
+    protected static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
+    protected static function getNavigationBadgeColor(): ?string
+    {
+        return static::getModel()::count() > 0 ? 'primary' : 'danger';
+    }
+
 
     protected static ?string $navigationIcon = 'heroicon-o-puzzle';
 
@@ -99,7 +109,6 @@ class ServiceResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
         ];
     }
 

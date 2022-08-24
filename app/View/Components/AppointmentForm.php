@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use App\Models\Home_Carousel;
+use App\Models\Service;
 use Illuminate\View\Component;
 
 class AppointmentForm extends Component
@@ -25,6 +26,7 @@ class AppointmentForm extends Component
     public function render()
     {
         $appointment_carousel = Home_Carousel::all()->where('is_public', '=', '1')->first();
-        return view('components.appointment-form',compact('appointment_carousel'));
+        $service = Service::all()->where('is_public', '=', '1');
+        return view('components.appointment-form', compact('appointment_carousel','service'));
     }
 }

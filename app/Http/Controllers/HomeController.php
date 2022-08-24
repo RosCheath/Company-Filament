@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Appointment;
 use App\Models\Feed;
 use App\Models\Home_Carousel;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
