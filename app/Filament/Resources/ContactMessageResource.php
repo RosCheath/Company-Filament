@@ -3,16 +3,13 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ContactMessageResource\Pages;
-use App\Filament\Resources\ContactMessageResource\RelationManagers;
 use App\Models\ContactMessage;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ContactMessageResource extends Resource
 {
@@ -24,7 +21,7 @@ class ContactMessageResource extends Resource
 
     public static function getGloballySearchableAttributes(): array
     {
-        return ['name', 'email','subject'];
+        return ['name', 'email', 'subject'];
     }
 
     public static function getGlobalSearchResultDetails(Model $record): array
@@ -32,9 +29,10 @@ class ContactMessageResource extends Resource
         return [
             'Name' => $record->name,
             'Email' => $record->email,
-            'subject' => $record->subject
+            'subject' => $record->subject,
         ];
     }
+
     protected static function getNavigationBadge(): ?string
     {
         return static::getModel()::count();
@@ -71,7 +69,7 @@ class ContactMessageResource extends Resource
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
-//                Tables\Actions\EditAction::make(),
+                //                Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
@@ -89,9 +87,9 @@ class ContactMessageResource extends Resource
     {
         return [
             'index' => Pages\ListContactMessages::route('/'),
-//            'create' => Pages\CreateContactMessage::route('/create'),
+            //            'create' => Pages\CreateContactMessage::route('/create'),
             'view' => Pages\ViewContactMessage::route('/{record}'),
-//            'edit' => Pages\EditContactMessage::route('/{record}/edit'),
+            //            'edit' => Pages\EditContactMessage::route('/{record}/edit'),
         ];
     }
 }

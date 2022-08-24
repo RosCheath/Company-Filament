@@ -9,10 +9,12 @@ class Appointment extends Model
 {
     use HasFactory;
 
-    protected $fillable=[
-      'name','email','phone','service_id','message'
+    protected $fillable = [
+        'name', 'email', 'phone', 'service_id', 'message',
     ];
-    public function service(){
+
+    public function service()
+    {
         return $this->belongsTo(Service::class);
     }
 }

@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\AppointmentResource\Pages;
-use App\Filament\Resources\AppointmentResource\RelationManagers;
 use App\Models\Appointment;
 use App\Models\Service;
 use Filament\Forms;
@@ -12,9 +11,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class AppointmentResource extends Resource
 {
@@ -72,14 +69,14 @@ class AppointmentResource extends Resource
                 Tables\Columns\TextColumn::make('phone')->searchable(),
                 Tables\Columns\TextColumn::make('email')->searchable(),
                 Tables\Columns\TextColumn::make('service.title'),
-                Tables\Columns\TextColumn::make('message')->limit(25)
+                Tables\Columns\TextColumn::make('message')->limit(25),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
-//                Tables\Actions\EditAction::make(),
+                //                Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
@@ -97,9 +94,9 @@ class AppointmentResource extends Resource
     {
         return [
             'index' => Pages\ListAppointments::route('/'),
-//            'create' => Pages\CreateAppointment::route('/create'),
+            //            'create' => Pages\CreateAppointment::route('/create'),
             'view' => Pages\ViewAppointment::route('/{record}'),
-//            'edit' => Pages\EditAppointment::route('/{record}/edit'),
+            //            'edit' => Pages\EditAppointment::route('/{record}/edit'),
         ];
     }
 }

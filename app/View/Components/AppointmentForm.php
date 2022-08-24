@@ -27,6 +27,7 @@ class AppointmentForm extends Component
     {
         $appointment_carousel = Home_Carousel::all()->where('is_public', '=', '1')->first();
         $service = Service::all()->where('is_public', '=', '1');
-        return view('components.appointment-form', compact('appointment_carousel','service'));
+
+        return view('components.appointment-form', compact('appointment_carousel', 'service'));
     }
 }

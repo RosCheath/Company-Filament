@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Appointment;
 use App\Models\Feed;
 use App\Models\Home_Carousel;
-use App\Models\Service;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -18,10 +17,12 @@ class HomeController extends Controller
         return view('Home.home', compact('carousel', 'HomeFeed'));
     }
 
-    public function appointment(Request $request){
+    public function appointment(Request $request)
+    {
         $input = $request->all();
         Appointment::create($input);
+
         return redirect()->back()
-            ->with('success','Your appointment has been send');
+            ->with('success', 'Your appointment has been send');
     }
 }

@@ -3,14 +3,11 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ServiceResource\Pages;
-use App\Filament\Resources\ServiceResource\RelationManagers\AppointmentsRelationManager;
-use App\Models\Appointment;
 use App\Models\Service;
 use Filament\Forms;
 use Filament\Forms\Components\Card;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Form;
-use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
@@ -45,7 +42,6 @@ class ServiceResource extends Resource
     {
         return static::getModel()::count() > 0 ? 'primary' : 'danger';
     }
-
 
     protected static ?string $navigationIcon = 'heroicon-o-puzzle';
 
