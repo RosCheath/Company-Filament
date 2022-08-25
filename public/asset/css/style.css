@@ -263,6 +263,13 @@
     transition: .5s;
 }
 
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 .team-item:hover .team-text {
     width: 100%;
 }

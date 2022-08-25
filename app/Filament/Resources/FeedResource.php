@@ -79,13 +79,13 @@ class FeedResource extends Resource
                             ->imageCropAspectRatio('1:1')
                             ->imageResizeTargetWidth('640')
                             ->imageResizeTargetHeight('480')
-                            ->getUploadedFileNameForStorageUsing(function (TemporaryUploadedFile $file
-                            ): string {
-                                $fileName = $file->hashName();
-                                $name = explode('.', $fileName);
-
-                                return (string) str('images/FeesPost'.date_format(now(), 'FY').$name[0]);
-                            })
+//                            ->getUploadedFileNameForStorageUsing(function (TemporaryUploadedFile $file
+//                            ): string {
+//                                $fileName = $file->hashName();
+//                                $name = explode('.', $fileName);
+//
+//                                return (string) str('images/FeesPost'.date_format(now(), 'FY').$name[0]);
+//                            })
                             ->image()
                             ->required(),
                         Forms\Components\RichEditor::make('description')

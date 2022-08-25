@@ -176,15 +176,11 @@
                     <img class="img-fluid w-100" src="{{asset('storage/' . $hf->image)}}" alt=""/>
                     <div class="facts-overlay">
                         <h1 class="display-1">0{{$loop->index+1}}</h1>
-                        <h4 class="text-white mb-3">Construction</h4>
-                        <p class="text-white" style="overflow: hidden;
-                                                     text-overflow: ellipsis;
-                                                     display: -webkit-box;
-                                                     -webkit-line-clamp: 3; /* number of lines to show */
-                                                     -webkit-box-orient: vertical;">
+                        <h4 class="text-white mb-3">{{$hf->title}}</h4>
+                        <p class="text-white line-clamp">
                             {{$hf->description}}
                         </p>
-                        <a class="text-white small" href=""
+                        <a class="text-white small" href="{{route('feed.view',$hf->id)}}"
                         >READ MORE<i class="fa fa-arrow-right ms-3"></i
                             ></a>
                     </div>

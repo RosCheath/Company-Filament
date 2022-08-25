@@ -15,7 +15,6 @@ class NewFeedController extends Controller
         return view('NewFeed.new_feed', compact('feed', 'about_carousel'));
     }
     public function view(Feed $feed){
-        $feed_rendom = Feed::where('is_public', '1')->latest()->paginate(4);
-        return view('NewFeed.view',compact('feed','feed_rendom'));
+        return view('NewFeed.view',compact('feed'));
     }
 }
