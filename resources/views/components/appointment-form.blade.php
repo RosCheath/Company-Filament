@@ -99,6 +99,7 @@
                         id="message"
                         name="message"
                         style="height: 100px"
+                        required
                     ></textarea>
                                     <label for="message">Message</label>
                                 </div>

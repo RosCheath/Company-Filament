@@ -67,6 +67,9 @@ class ServiceResource extends Resource
                     ]),
                     Forms\Components\Card::make([
                         Forms\Components\FileUpload::make('image')
+                            ->imageCropAspectRatio('1:1')
+                            ->imageResizeTargetWidth('640')
+                            ->imageResizeTargetHeight('480')
                             ->image()
                             ->required(),
                     ]),

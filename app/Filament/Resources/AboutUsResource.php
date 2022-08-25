@@ -45,7 +45,7 @@ class AboutUsResource extends Resource
                             Forms\Components\Card::make([
                                 Forms\Components\TextInput::make('title')->required(),
                                 Forms\Components\TextInput::make('detail')->maxLength(40)
-                                ->required(),
+                                    ->required(),
                                 Forms\Components\MarkdownEditor::make('description')
                                     ->required(),
                             ]),
@@ -56,8 +56,8 @@ class AboutUsResource extends Resource
 
                         Forms\Components\Card::make([
                             Forms\Components\FileUpload::make('image')
-                            ->image()
-                            ->required(),
+                                ->image()
+                                ->required(),
                         ])->columnSpan([
                             12,
                             'lg' => 3,

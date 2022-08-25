@@ -76,6 +76,9 @@ class FeedResource extends Resource
                                 ->required(),
                         ])->columns(2),
                         Forms\Components\FileUpload::make('image')
+                            ->imageCropAspectRatio('1:1')
+                            ->imageResizeTargetWidth('640')
+                            ->imageResizeTargetHeight('480')
                             ->getUploadedFileNameForStorageUsing(function (TemporaryUploadedFile $file
                             ): string {
                                 $fileName = $file->hashName();

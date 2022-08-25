@@ -99,12 +99,22 @@
                         class="position-relative overflow-hidden ps-5 pt-5 h-100"
                         style="min-height: 400px"
                     >
+                        @if($about_us->image === 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg')
+                            <img
+                                class="position-absolute w-100 h-100"
+                                src="{{$about_us->image}}"
+                                alt=""
+                                style="object-fit: cover"
+                            />
+                        @else
                         <img
                             class="position-absolute w-100 h-100"
-                            src="{{asset('asset/img/about.jpg')}}"
+                            src="{{asset('storage/'. $about_us->image)}}"
                             alt=""
                             style="object-fit: cover"
                         />
+                        @endif
+
                         <div
                             class="position-absolute top-0 start-0 bg-white pe-3 pb-3"
                             style="width: 200px; height: 200px"
@@ -112,8 +122,7 @@
                             <div
                                 class="d-flex flex-column justify-content-center text-center bg-warning h-100 p-3"
                             >
-                                <h1 class="text-white">25</h1>
-                                <h5 class="text-white mb-0">Experience</h5>
+                                <h3 class="text-white">{{$about_us->detail}}</h3>
                             </div>
                         </div>
                     </div>
@@ -123,18 +132,11 @@
                         <div class="border-start border-5 border-primary ps-4 mb-5">
                             <h6 class="text-body text-uppercase mb-2">About Us</h6>
                             <h1 class="display-6 mb-0">
-                                Unique Solutions For Residentials & Industries!
+                                {{$about_us->title}}
                             </h1>
                         </div>
                         <p>
-                            Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
-                            Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit,
-                            sed stet lorem sit clita duo justo magna dolore erat amet
-                        </p>
-                        <p class="mb-4">
-                            Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
-                            Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit,
-                            sed stet lorem sit clita duo justo magna dolore erat amet
+                           {{$about_us->description}}
                         </p>
                         <div class="border-top mt-4 pt-4">
                             <div class="row g-4">
@@ -193,99 +195,6 @@
     </div>
     <!-- Facts End -->
 
-    <!-- Features Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="border-start border-5 border-primary ps-4 mb-5">
-                        <h6 class="text-body text-uppercase mb-2">Why Choose Us!</h6>
-                        <h1 class="display-6 mb-0">
-                            Our Specialization And Company Features
-                        </h1>
-                    </div>
-                    <p class="mb-5">
-                        Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
-                        diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet
-                        lorem sit clita duo justo magna dolore erat amet
-                    </p>
-                    <div class="row gy-5 gx-4">
-                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
-                            <div class="d-flex align-items-center mb-3">
-                                <i
-                                    class="fa fa-check fa-2x text-primary flex-shrink-0 me-3"
-                                ></i>
-                                <h6 class="mb-0">Large number of services provided</h6>
-                            </div>
-                            <span
-                            >Magna sea eos sit dolor, ipsum amet ipsum lorem diam</span
-                            >
-                        </div>
-                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.2s">
-                            <div class="d-flex align-items-center mb-3">
-                                <i
-                                    class="fa fa-check fa-2x text-primary flex-shrink-0 me-3"
-                                ></i>
-                                <h6 class="mb-0">25+ years of professional experience</h6>
-                            </div>
-                            <span
-                            >Magna sea eos sit dolor, ipsum amet ipsum lorem diam</span
-                            >
-                        </div>
-                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
-                            <div class="d-flex align-items-center mb-3">
-                                <i
-                                    class="fa fa-check fa-2x text-primary flex-shrink-0 me-3"
-                                ></i>
-                                <h6 class="mb-0">A large number of grateful customers</h6>
-                            </div>
-                            <span
-                            >Magna sea eos sit dolor, ipsum amet ipsum lorem diam</span
-                            >
-                        </div>
-                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.4s">
-                            <div class="d-flex align-items-center mb-3">
-                                <i
-                                    class="fa fa-check fa-2x text-primary flex-shrink-0 me-3"
-                                ></i>
-                                <h6 class="mb-0">Always reliable and affordable prices</h6>
-                            </div>
-                            <span
-                            >Magna sea eos sit dolor, ipsum amet ipsum lorem diam</span
-                            >
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div
-                        class="position-relative overflow-hidden ps-5 pt-5 h-100"
-                        style="min-height: 400px"
-                    >
-                        <img
-                            class="position-absolute w-100 h-100"
-                            src="{{asset('asset/img/feature.jpg')}}"
-                            alt=""
-                            style="object-fit: cover"
-                        />
-                        <div
-                            class="position-absolute top-0 start-0 bg-white pe-3 pb-3"
-                            style="width: 200px; height: 200px"
-                        >
-                            <div
-                                class="d-flex flex-column justify-content-center text-center bg-primary h-100 p-3"
-                            >
-                                <h1 class="text-white">25</h1>
-                                <h2 class="text-white">Years</h2>
-                                <h5 class="text-white mb-0">Experience</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Features End -->
-
     <!-- Service Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -299,18 +208,18 @@
                     </div>
                 </div>
                 <div class="col-lg-6 text-lg-end wow fadeInUp" data-wow-delay="0.3s">
-                    <a class="btn btn-primary py-3 px-5" href="">More Services</a>
+                    <a class="btn btn-primary py-3 px-5" href="{{url('our/services')}}">More Services</a>
                 </div>
             </div>
             <div class="row g-4 justify-content-center">
+                @foreach($service as $s)
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item bg-light overflow-hidden h-100">
-                        <img class="img-fluid" src="{{asset('asset/img/service-1.jpg')}}" alt=""/>
+                        <img class="img-fluid" src="{{asset('storage/'. $s->image)}}" alt=""/>
                         <div class="service-text position-relative text-center h-100 p-4">
-                            <h5 class="mb-3">Building Construction</h5>
+                            <h5 class="mb-3">{{$s->title}}</h5>
                             <p>
-                                Tempor erat elitr rebum at clita dolor diam ipsum sit diam
-                                amet diam et eos
+                                {{$s->description}}
                             </p>
                             <a class="small" href=""
                             >READ MORE<i class="fa fa-arrow-right ms-3"></i
@@ -318,81 +227,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item bg-light overflow-hidden h-100">
-                        <img class="img-fluid" src="{{asset('asset/img/service-2.jpg')}}" alt=""/>
-                        <div class="service-text position-relative text-center h-100 p-4">
-                            <h5 class="mb-3">Home Maintainance</h5>
-                            <p>
-                                Tempor erat elitr rebum at clita dolor diam ipsum sit diam
-                                amet diam et eos
-                            </p>
-                            <a class="small" href=""
-                            >READ MORE<i class="fa fa-arrow-right ms-3"></i
-                                ></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item bg-light overflow-hidden h-100">
-                        <img class="img-fluid" src="{{asset('asset/img/service-3.jpg')}}" alt=""/>
-                        <div class="service-text position-relative text-center h-100 p-4">
-                            <h5 class="mb-3">Renovation and Painting</h5>
-                            <p>
-                                Tempor erat elitr rebum at clita dolor diam ipsum sit diam
-                                amet diam et eos
-                            </p>
-                            <a class="small" href=""
-                            >READ MORE<i class="fa fa-arrow-right ms-3"></i
-                                ></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item bg-light overflow-hidden h-100">
-                        <img class="img-fluid" src="{{asset('asset/img/service-4.jpg')}}" alt=""/>
-                        <div class="service-text position-relative text-center h-100 p-4">
-                            <h5 class="mb-3">Wiring and installation</h5>
-                            <p>
-                                Tempor erat elitr rebum at clita dolor diam ipsum sit diam
-                                amet diam et eos
-                            </p>
-                            <a class="small" href=""
-                            >READ MORE<i class="fa fa-arrow-right ms-3"></i
-                                ></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item bg-light overflow-hidden h-100">
-                        <img class="img-fluid" src="{{asset('asset/img/service-5.jpg')}}" alt=""/>
-                        <div class="service-text position-relative text-center h-100 p-4">
-                            <h5 class="mb-3">Tiling and Painting</h5>
-                            <p>
-                                Tempor erat elitr rebum at clita dolor diam ipsum sit diam
-                                amet diam et eos
-                            </p>
-                            <a class="small" href=""
-                            >READ MORE<i class="fa fa-arrow-right ms-3"></i
-                                ></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item bg-light overflow-hidden h-100">
-                        <img class="img-fluid" src="{{asset('asset/img/service-6.jpg')}}" alt=""/>
-                        <div class="service-text position-relative text-center h-100 p-4">
-                            <h5 class="mb-3">Interior Design</h5>
-                            <p>
-                                Tempor erat elitr rebum at clita dolor diam ipsum sit diam
-                                amet diam et eos
-                            </p>
-                            <a class="small" href=""
-                            >READ MORE<i class="fa fa-arrow-right ms-3"></i
-                                ></a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -409,42 +244,23 @@
                         <h1 class="display-6 mb-0">Our Expert Worker</h1>
                     </div>
                 </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <p class="mb-0">
-                        Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
-                        diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet
-                        lorem sit clita duo justo magna dolore erat amet
-                    </p>
-                </div>
             </div>
             <div class="row g-4">
+                @foreach($team as $t)
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item position-relative">
-                        <img class="img-fluid" src="{{asset('asset/img/team-1.jpg')}}" alt=""/>
+                        @if($t->image === 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg')
+                            <img class="img-fluid" src="{{$t->image}}">
+                        @else
+                        <img class="img-fluid" src="{{asset('storage/'.$t->image)}}" alt=""/>
+                        @endif
                         <div class="team-text bg-white p-4">
-                            <h5>Full Name</h5>
-                            <span>Engineer</span>
+                            <h5>{{$t->name}}</h5>
+                            <span>{{$t->position}}</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item position-relative">
-                        <img class="img-fluid" src="{{asset('asset/img/team-2.jpg')}}" alt=""/>
-                        <div class="team-text bg-white p-4">
-                            <h5>Full Name</h5>
-                            <span>Engineer</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item position-relative">
-                        <img class="img-fluid" src="{{asset('asset/img/team-3.jpg')}}" alt=""/>
-                        <div class="team-text bg-white p-4">
-                            <h5>Full Name</h5>
-                            <span>Engineer</span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -456,28 +272,29 @@
             <div class="row g-5">
                 <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="border-start border-5 border-primary ps-4 mb-5">
-                        <h6 class="text-body text-uppercase mb-2">Testimonial</h6>
-                        <h1 class="display-6 mb-0">What Our Happy Clients Say!</h1>
+                        <h6 class="text-body text-uppercase mb-2">FOUNDERING</h6>
+                        <h1 class="display-6 mb-0">This Is Founder of -> {{config('app.name')}}</h1>
                     </div>
-                    <p class="mb-4">
-                        Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat
-                        ipsum et lorem et sit, sed stet lorem sit clita duo justo magna
-                        dolore erat amet
-                    </p>
+
+                    <div class="border-start border-5 border-primary ps-4 mb-5">
+                        <h6 class="text-body text-uppercase mb-2">Testimonial</h6>
+                        <h1 class="display-6 mb-0">How Many Happy Clients!</h1>
+                    </div>
+
                     <div class="row g-4">
                         <div class="col-sm-6">
                             <div class="d-flex align-items-center mb-2">
                                 <i class="fa fa-users fa-2x text-primary flex-shrink-0"></i>
-                                <h1 class="ms-3 mb-0">123+</h1>
+                                <h1 class="ms-3 mb-0">{{$count_appoint}}+</h1>
                             </div>
                             <h5 class="mb-0">Happy Clients</h5>
                         </div>
                         <div class="col-sm-6">
                             <div class="d-flex align-items-center mb-2">
                                 <i class="fa fa-check fa-2x text-primary flex-shrink-0"></i>
-                                <h1 class="ms-3 mb-0">123+</h1>
+                                <h1 class="ms-3 mb-0">{{$service_count}}+</h1>
                             </div>
-                            <h5 class="mb-0">Projects Done</h5>
+                            <h5 class="mb-0">Service we have</h5>
                         </div>
                     </div>
                 </div>

@@ -28,6 +28,9 @@ class HomeCarouselResource extends Resource
                     Forms\Components\TextInput::make('title')
                         ->required(),
                     Forms\Components\FileUpload::make('image')
+                        ->imageCropAspectRatio('16:9')
+                        ->imageResizeTargetWidth('1920')
+                        ->imageResizeTargetHeight('1080')
                         ->image()
                         ->required(),
                     Toggle::make('is_public')->default(1)
