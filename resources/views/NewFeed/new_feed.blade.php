@@ -34,6 +34,7 @@
     @foreach ($feed as $feeds)
         @if ($loop->index %2 == 0)
             <!-- Features Start left -->
+            <a href="{{route('feed.view',$feeds->id)}}">
             <div class="container-xxl py-5">
                 <div class="container">
                     <div class="row g-5">
@@ -124,6 +125,7 @@
                     </div>
                 </div>
             </div>
+            </a>
             <!-- Features End -->
         @else
             <!-- Features Start right -->

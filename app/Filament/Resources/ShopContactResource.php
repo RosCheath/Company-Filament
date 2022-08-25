@@ -53,7 +53,12 @@ class ShopContactResource extends Resource
                         ]),
                     Forms\Components\Card::make()
                         ->schema([
-                            Forms\Components\FileUpload::make('image'),
+                            Forms\Components\FileUpload::make('image')
+                                ->imageCropAspectRatio('1:1')
+                                ->imageResizeTargetWidth('550')
+                                ->imageResizeTargetHeight('650')
+                            ->image()
+                            ->required(),
                         ]),
                 ])->columnSpan(1),
             ])->columns(4);
@@ -63,8 +68,8 @@ class ShopContactResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('title'),
+                Tables\Columns\TextColumn::make('name')->searchable(),
+                Tables\Columns\TextColumn::make('title')->searchable(),
                 Tables\Columns\TextColumn::make('detail')->limit(22),
                 Tables\Columns\ImageColumn::make('image'),
                 BooleanColumn::make('is_public')

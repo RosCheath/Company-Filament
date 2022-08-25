@@ -54,6 +54,9 @@ class AboutTeamResource extends Resource
                         Forms\Components\TextInput::make('position')->required(),
                     ])->columns(2),
                     Forms\Components\FileUpload::make('image')
+                        ->imageCropAspectRatio('1:1')
+                        ->imageResizeTargetWidth('550')
+                        ->imageResizeTargetHeight('650')
                         ->image()
                         ->required(),
                 ]),

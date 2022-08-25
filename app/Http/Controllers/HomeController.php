@@ -15,7 +15,7 @@ class HomeController extends Controller
     public function index()
     {
         $carousel = Home_Carousel::all()->where('is_public', '=', '1');
-        $HomeFeed = Feed::where('is_public', '1')->latest()->paginate(4);
+        $HomeFeed = Feed::where('is_public', '1')->latest()->paginate(4)->inRandomOrder();
         $service = Service::all()->where('is_public', '=', '1');
         $team = AboutTeam::all();
         $about_us = AboutUs::all()->first();
