@@ -1,6 +1,5 @@
 @extends('layouts.master')
 @section('content')
-    @section('title','-> About Us')
 
     <!-- About Start -->
         <div class="container-xxl py-5">

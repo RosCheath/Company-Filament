@@ -9,10 +9,10 @@ class OurServiceController extends Controller
 {
     public function index()
     {
-        $servic = Service::latest()->get();
+        $service = Service::latest()->get();
         $about_carousel = AboutCarousel::all();
 
-        return view('OurServices.our_services', compact('servic', 'about_carousel'));
+        return view('OurServices.our_services', compact('service', 'about_carousel'));
     }
     public function view(Service $service){
         return view('OurServices.view',compact('service'));

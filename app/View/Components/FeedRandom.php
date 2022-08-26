@@ -24,7 +24,7 @@ class FeedRandom extends Component
      */
     public function render()
     {
-        $RandonFeed = Feed::all()->where('is_public', '1')->random(4);
+        $RandonFeed = Feed::inRandomOrder()->limit(4)->where('is_public', '1')->get();
         return view('components.feed-random',compact('RandonFeed'));
     }
 }

@@ -24,7 +24,7 @@ class ServiceRandom extends Component
      */
     public function render()
     {
-        $RandonService = Service::all()->where('is_public', '1')->random(4);
+        $RandonService = Service::inRandomOrder()->limit(4)->where('is_public', '1')->get();
         return view('components.service-random',compact('RandonService'));
     }
 }
