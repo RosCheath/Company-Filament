@@ -14,7 +14,9 @@ class OurServiceController extends Controller
 
         return view('OurServices.our_services', compact('service', 'about_carousel'));
     }
-    public function view(Service $service){
-        return view('OurServices.view',compact('service'));
+
+    public function view(Service $service)
+    {
+        return view('OurServices.view', compact('service'));
     }
 }

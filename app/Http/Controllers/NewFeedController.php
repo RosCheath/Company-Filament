@@ -14,7 +14,9 @@ class NewFeedController extends Controller
 
         return view('NewFeed.new_feed', compact('feed', 'about_carousel'));
     }
-    public function view(Feed $feed){
-        return view('NewFeed.view',compact('feed'));
+
+    public function view(Feed $feed)
+    {
+        return view('NewFeed.view', compact('feed'));
     }
 }

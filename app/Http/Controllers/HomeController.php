@@ -25,11 +25,11 @@ class HomeController extends Controller
 
         return view('Home.home', compact('carousel',
             'HomeFeed',
-        'service',
-        'team',
-        'service_count',
-        'count_appoint',
-        'about_us'
+            'service',
+            'team',
+            'service_count',
+            'count_appoint',
+            'about_us'
         ));
     }
 
