@@ -48,7 +48,7 @@
             </div>
             <div class="row g-4 justify-content-center">
                 @foreach($servic as $s)
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" href="">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" href="{{route('service.view',$s->id)}}">
                     <div class="service-item bg-light overflow-hidden h-100">
                         <img class="img-fluid" src="{{asset('storage/'.$s->image)}}" alt="" />
                         <div class="service-text position-relative text-center h-100 p-4">

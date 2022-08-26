@@ -217,7 +217,7 @@
                             <p>
                                 {{$s->description}}
                             </p>
-                            <a class="small" href=""
+                            <a class="small" href="{{route('service.view',$s->id)}}"
                             >READ MORE<i class="fa fa-arrow-right ms-3"></i
                                 ></a>
                         </div>

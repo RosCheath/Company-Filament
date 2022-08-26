@@ -27,3 +27,4 @@ Route::post('contact/form', [\App\Http\Controllers\ContactUsController::class, '
 Route::post('appointment/form', [\App\Http\Controllers\HomeController::class, 'appointment'])->name('appointment.store');
 
 Route::get('view/feed/post/{feed}',[\App\Http\Controllers\NewFeedController::class,'view'])->name('feed.view');
+Route::get('view/our/service/{feed}',[\App\Http\Controllers\OurServiceController::class,'view'])->name('service.view');
