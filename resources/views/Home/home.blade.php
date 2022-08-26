@@ -136,7 +136,7 @@
                             </h1>
                         </div>
                         <p>
-                            {{$about_us->description}}
+                            {!! html_entity_decode($about_us['description']) !!}
                         </p>
                         <div class="border-top mt-4 pt-4">
                             <div class="row g-4">
@@ -178,7 +178,7 @@
                             <h1 class="display-1">0{{$loop->index+1}}</h1>
                             <h4 class="text-white mb-3">{{$hf->title}}</h4>
                             <p class="text-white line-clamp">
-                                {{$hf->description}}
+                                {!! html_entity_decode($hf['description']) !!}
                             </p>
                             <a class="text-white small" href="{{route('feed.view',$hf->id)}}"
                             >READ MORE<i class="fa fa-arrow-right ms-3"></i
@@ -215,7 +215,7 @@
                             <div class="service-text position-relative text-center h-100 p-4">
                                 <h5 class="mb-3">{{$s->title}}</h5>
                                 <p>
-                                    {{$s->description}}
+                                    {!! html_entity_decode($s['description']) !!}
                                 </p>
                                 <a class="small" href="{{route('service.view',$s->id)}}"
                                 >READ MORE<i class="fa fa-arrow-right ms-3"></i

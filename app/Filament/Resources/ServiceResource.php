@@ -52,7 +52,7 @@ class ServiceResource extends Resource
                 Forms\Components\Group::make([
                     Forms\Components\Card::make([
                         Forms\Components\TextInput::make('title')->required(),
-                        Forms\Components\MarkdownEditor::make('description')->required(),
+                        Forms\Components\RichEditor::make('description')->required(),
                     ]),
                 ])->columnSpan([
                     12,

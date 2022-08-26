@@ -46,7 +46,7 @@ class AboutUsResource extends Resource
                                 Forms\Components\TextInput::make('title')->required(),
                                 Forms\Components\TextInput::make('detail')->maxLength(40)
                                     ->required(),
-                                Forms\Components\MarkdownEditor::make('description')
+                                Forms\Components\RichEditor::make('description')
                                     ->required(),
                             ]),
                         ])->columnSpan([

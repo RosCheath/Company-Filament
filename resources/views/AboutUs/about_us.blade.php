@@ -74,7 +74,7 @@
                                 </h1>
                             </div>
                             <p>
-                                {{$au->description}}
+                                {!! html_entity_decode($au['description']) !!}
                             </p>
                             <div class="border-top mt-4 pt-4">
                                 <div class="row g-4">
