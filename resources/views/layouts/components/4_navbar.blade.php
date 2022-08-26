@@ -4,7 +4,7 @@
 >
     <a href="{{url('/')}}" class="navbar-brand d-flex align-items-center">
         <h4 class="m-0">
-{{--            <i class="logo.ico text-primary me-3"></i>--}}
+            {{--            <i class="logo.ico text-primary me-3"></i>--}}
             <img src="{{asset('logo.png')}}" alt="Image"/>
             {{config('app.name')}}
         </h4>

@@ -48,19 +48,19 @@
             </div>
             <div class="row g-4 justify-content-center">
                 @foreach($service as $s)
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item bg-light overflow-hidden h-100">
-                        <a href="{{route('service.view',$s->id)}}">
-                        <img class="img-fluid" src="{{asset('storage/'.$s->image)}}" alt="" />
-                        <div class="service-text position-relative text-center h-100 p-4">
-                            <h5 class="mb-3">{{$s->title}}</h5>
-                            <p>
-                                {{$s->description}}
-                            </p>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item bg-light overflow-hidden h-100">
+                            <a href="{{route('service.view',$s->id)}}">
+                                <img class="img-fluid" src="{{asset('storage/'.$s->image)}}" alt=""/>
+                                <div class="service-text position-relative text-center h-100 p-4">
+                                    <h5 class="mb-3">{{$s->title}}</h5>
+                                    <p>
+                                        {{$s->description}}
+                                    </p>
+                                </div>
+                            </a>
                         </div>
-                        </a>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>

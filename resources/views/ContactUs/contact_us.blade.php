@@ -26,34 +26,34 @@
         </div>
     </div>
     <!-- Page Header End -->
-    
+
     <!-- Contact Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5">
                 @foreach($shop_contact as $sc)
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="row g-4 align-items-center">
-                        <div class="col-sm-6">
-                            <img class="img-fluid" src="{{asset('storage/'.$sc->image)}}" alt="" />
-                        </div>
-                        <div class="col-sm-6">
-                            <h3 class="mb-0">{{$sc->name}}</h3>
-                            <p>{{$sc->title}}</p>
-                            <h6>Contact Details</h6>
-                            <p>
-                                {{$sc->detail}}
-                            </p>
-                            <p class="mb-0">Call: +{{$sc->phone}}</p>
-                            <p class="mb-0">Email: {{$sc->email}}</p>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-sm-6">
+                                <img class="img-fluid" src="{{asset('storage/'.$sc->image)}}" alt=""/>
+                            </div>
+                            <div class="col-sm-6">
+                                <h3 class="mb-0">{{$sc->name}}</h3>
+                                <p>{{$sc->title}}</p>
+                                <h6>Contact Details</h6>
+                                <p>
+                                    {{$sc->detail}}
+                                </p>
+                                <p class="mb-0">Call: +{{$sc->phone}}</p>
+                                <p class="mb-0">Email: {{$sc->email}}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
     </div>
-        <div class="container-xxl py-5">
+    <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 450px">

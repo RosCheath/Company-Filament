@@ -3,14 +3,15 @@
     <div
         @foreach($footer as $fi)
             @if($fi->footer_image === 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg')
-        class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn"
+                class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn"
         data-wow-delay="0.1s"
         style="background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url({{$fi->footer_image}}) center center no-repeat;"
     >
         @else
             class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn"
             data-wow-delay="0.1s"
-            style="background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url({{asset('storage/'. $fi->footer_image)}}) center center no-repeat;"
+            style="background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)),
+            url({{asset('storage/'. $fi->footer_image)}}) center center no-repeat;"
             >
         @endif
         @endforeach
@@ -28,8 +29,8 @@
                         <i class="fa fa-map-marker-alt me-3"></i>{{$contact_location->location}}
                     </p>
                     @foreach($footer as $footer)
-                    <p><i class="fa fa-phone-alt me-3"></i>+{{$footer->phone}}</p>
-                    <p><i class="fa fa-envelope me-3"></i>{{$footer->email}}</p>
+                        <p><i class="fa fa-phone-alt me-3"></i>+{{$footer->phone}}</p>
+                        <p><i class="fa fa-envelope me-3"></i>{{$footer->email}}</p>
                     @endforeach
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -54,7 +55,8 @@
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         Created By:
-                        <a href="https://www.facebook.com/profile.php?id=100013670286692" target="_blank">Ros socheath</a>
+                        <a href="https://www.facebook.com/profile.php?id=100013670286692" target="_blank">Ros
+                            socheath</a>
                     </div>
                 </div>
             </div>

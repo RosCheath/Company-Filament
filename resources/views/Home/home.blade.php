@@ -107,12 +107,12 @@
                                 style="object-fit: cover"
                             />
                         @else
-                        <img
-                            class="position-absolute w-100 h-100"
-                            src="{{asset('storage/'. $about_us->image)}}"
-                            alt=""
-                            style="object-fit: cover"
-                        />
+                            <img
+                                class="position-absolute w-100 h-100"
+                                src="{{asset('storage/'. $about_us->image)}}"
+                                alt=""
+                                style="object-fit: cover"
+                            />
                         @endif
 
                         <div
@@ -136,7 +136,7 @@
                             </h1>
                         </div>
                         <p>
-                           {{$about_us->description}}
+                            {{$about_us->description}}
                         </p>
                         <div class="border-top mt-4 pt-4">
                             <div class="row g-4">
@@ -171,21 +171,21 @@
     <div class="container-fluid my-5 p-0">
         <div class="row g-0">
             @foreach($HomeFeed as $hf)
-            <div class="col-xl-3 col-sm-6 wow fadeIn" data-wow-delay="0.{{2+$loop->index+3}}s" >
-                <div class="position-relative">
-                    <img class="img-fluid w-100" src="{{asset('storage/' . $hf->image)}}" alt=""/>
-                    <div class="facts-overlay">
-                        <h1 class="display-1">0{{$loop->index+1}}</h1>
-                        <h4 class="text-white mb-3">{{$hf->title}}</h4>
-                        <p class="text-white line-clamp">
-                            {{$hf->description}}
-                        </p>
-                        <a class="text-white small" href="{{route('feed.view',$hf->id)}}"
-                        >READ MORE<i class="fa fa-arrow-right ms-3"></i
-                            ></a>
+                <div class="col-xl-3 col-sm-6 wow fadeIn" data-wow-delay="0.{{2+$loop->index+3}}s">
+                    <div class="position-relative">
+                        <img class="img-fluid w-100" src="{{asset('storage/' . $hf->image)}}" alt=""/>
+                        <div class="facts-overlay">
+                            <h1 class="display-1">0{{$loop->index+1}}</h1>
+                            <h4 class="text-white mb-3">{{$hf->title}}</h4>
+                            <p class="text-white line-clamp">
+                                {{$hf->description}}
+                            </p>
+                            <a class="text-white small" href="{{route('feed.view',$hf->id)}}"
+                            >READ MORE<i class="fa fa-arrow-right ms-3"></i
+                                ></a>
+                        </div>
                     </div>
                 </div>
-            </div>
             @endforeach
         </div>
     </div>
@@ -209,20 +209,20 @@
             </div>
             <div class="row g-4 justify-content-center">
                 @foreach($service as $s)
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item bg-light overflow-hidden h-100">
-                        <img class="img-fluid" src="{{asset('storage/'. $s->image)}}" alt=""/>
-                        <div class="service-text position-relative text-center h-100 p-4">
-                            <h5 class="mb-3">{{$s->title}}</h5>
-                            <p>
-                                {{$s->description}}
-                            </p>
-                            <a class="small" href="{{route('service.view',$s->id)}}"
-                            >READ MORE<i class="fa fa-arrow-right ms-3"></i
-                                ></a>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item bg-light overflow-hidden h-100">
+                            <img class="img-fluid" src="{{asset('storage/'. $s->image)}}" alt=""/>
+                            <div class="service-text position-relative text-center h-100 p-4">
+                                <h5 class="mb-3">{{$s->title}}</h5>
+                                <p>
+                                    {{$s->description}}
+                                </p>
+                                <a class="small" href="{{route('service.view',$s->id)}}"
+                                >READ MORE<i class="fa fa-arrow-right ms-3"></i
+                                    ></a>
+                            </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
@@ -243,19 +243,19 @@
             </div>
             <div class="row g-4">
                 @foreach($team as $t)
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item position-relative">
-                        @if($t->image === 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg')
-                            <img class="img-fluid" src="{{$t->image}}">
-                        @else
-                        <img class="img-fluid" src="{{asset('storage/'.$t->image)}}" alt=""/>
-                        @endif
-                        <div class="team-text bg-white p-4">
-                            <h5>{{$t->name}}</h5>
-                            <span>{{$t->position}}</span>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item position-relative">
+                            @if($t->image === 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg')
+                                <img class="img-fluid" src="{{$t->image}}">
+                            @else
+                                <img class="img-fluid" src="{{asset('storage/'.$t->image)}}" alt=""/>
+                            @endif
+                            <div class="team-text bg-white p-4">
+                                <h5>{{$t->name}}</h5>
+                                <span>{{$t->position}}</span>
+                            </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>

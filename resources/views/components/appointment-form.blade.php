@@ -70,13 +70,13 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-{{--                                    <input--}}
-{{--                                        type="text"--}}
-{{--                                        class="form-control bg-dark border-0"--}}
-{{--                                        id="cage"--}}
-{{--                                        name="service_id"--}}
-{{--                                        placeholder="Child Age"--}}
-{{--                                    />--}}
+                                    {{--                                    <input--}}
+                                    {{--                                        type="text"--}}
+                                    {{--                                        class="form-control bg-dark border-0"--}}
+                                    {{--                                        id="cage"--}}
+                                    {{--                                        name="service_id"--}}
+                                    {{--                                        placeholder="Child Age"--}}
+                                    {{--                                    />--}}
                                     <select
                                         class="form-control bg-dark border-0 cage"
                                         name="service_id"
@@ -85,7 +85,7 @@
                                     >
                                         <option value="">Please select one</option>
                                         @foreach($service as $s)
-                                        <option value="{{$s->id}}">{{$s->title}}</option>
+                                            <option value="{{$s->id}}">{{$s->title}}</option>
                                         @endforeach
                                     </select>
                                     <label for="cage">Service Type</label>

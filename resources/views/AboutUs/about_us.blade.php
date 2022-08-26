@@ -119,21 +119,21 @@
             </div>
             <div class="row g-4">
                 @foreach($about_team as $at)
-                <div class="col-lg-4 col-md-6 wow fadeInUp"
-                     data-wow-delay="0.{{2+$loop->index+3}}s"
-                >
-                    <div class="team-item position-relative">
-                        @if($at->image ==='https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg')
-                        <img class="img-fluid" src="{{$at->image}}" alt="" />
-                        @else
-                            <img class="img-fluid" src="{{asset('storage/') . $at->image}}" alt="" />
-                        @endif
-                        <div class="team-text bg-white p-4">
-                            <h5>{{$at->name}}</h5>
-                            <span>{{$at->position}}</span>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp"
+                         data-wow-delay="0.{{2+$loop->index+3}}s"
+                    >
+                        <div class="team-item position-relative">
+                            @if($at->image ==='https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg')
+                                <img class="img-fluid" src="{{$at->image}}" alt=""/>
+                            @else
+                                <img class="img-fluid" src="{{asset('storage/') . $at->image}}" alt=""/>
+                            @endif
+                            <div class="team-text bg-white p-4">
+                                <h5>{{$at->name}}</h5>
+                                <span>{{$at->position}}</span>
+                            </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
