@@ -126,7 +126,7 @@
                             @if($at->image ==='https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg')
                                 <img class="img-fluid" src="{{$at->image}}" alt=""/>
                             @else
-                                <img class="img-fluid" src="{{asset('storage/') . $at->image}}" alt=""/>
+                                <img class="img-fluid" src="{{asset('storage/'. $at->image) }}" alt=""/>
                             @endif
                             <div class="team-text bg-white p-4">
                                 <h5>{{$at->name}}</h5>
@@ -139,6 +139,8 @@
         </div>
     </div>
     <!-- Team End -->
+
+    <x-certificate></x-certificate>
 @endsection
 
 <style>
