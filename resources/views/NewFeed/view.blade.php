@@ -27,7 +27,7 @@
                             </h1>
                         </div>
                         <p>
-                            {{$feed->description}}
+                            {!! html_entity_decode($feed['description']) !!}
                         </p>
                     </div>
                 </div>

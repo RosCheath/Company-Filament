@@ -8,14 +8,12 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div
                         class="position-relative overflow-hidden ps-5 pt-5 h-100"
-                        style="min-height: 500px"
-                    >
+                        style="min-height: 500px">
                         <img
                             class="position-absolute w-100 h-100"
                             src="{{asset('storage/'. $service->image)}}"
                             alt=""
-                            style="object-fit: cover"
-                        />
+                            style="object-fit: cover"/>
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -27,7 +25,7 @@
                             </h1>
                         </div>
                         <p>
-                            {{$service->description}}
+                            {!! html_entity_decode($service['description']) !!}
                         </p>
                     </div>
                 </div>

@@ -270,6 +270,13 @@
     overflow: hidden;
 }
 
+.line-clamp-feed {
+    display: -webkit-box;
+    -webkit-line-clamp: 16;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 .team-item:hover .team-text {
     width: 100%;
 }
