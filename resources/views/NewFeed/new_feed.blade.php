@@ -41,12 +41,14 @@
                             class="position-relative overflow-hidden ps-5 pt-5 h-100"
                             style="min-height: 400px"
                         >
+                            <a href="{{route('feed.view',$feeds->id)}}">
                             <img
                                 class="position-absolute w-100 h-100"
                                 src="{{asset('storage/'. $feeds->image)}}"
                                 alt=""
                                 style="object-fit: cover"
                             />
+                            </a>
                             <div
                                 class="position-absolute top-0 start-0 bg-white pe-3 pb-3"
                             >
@@ -61,11 +63,8 @@
                                 </a>
                             </h1>
                         </div>
-                        {{--                           {!! html_entity_decode($feeds['description']) !!}--}}
                         <p class="mb-5 line-clamp-feed">
-                            {!! html_entity_decode($feeds['description']) !!}
-                            {{--                            {{$feeds->description}}--}}
-                            {{--                                . nl2br(htmlentities($_POST['textarea'])) .--}}
+                            {{strip_tags($feeds->description)}}
                         </p>
                     </div>
 

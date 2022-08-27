@@ -178,7 +178,8 @@
                             <h1 class="display-1">0{{$loop->index+1}}</h1>
                             <h4 class="text-white mb-3">{{$hf->title}}</h4>
                             <p class="text-white line-clamp">
-                                {!! html_entity_decode($hf['description']) !!}
+{{--                                {!! html_entity_decode($hf['description']) !!}--}}
+                                {{strip_tags($hf->description)}}
                             </p>
                             <a class="text-white small" href="{{route('feed.view',$hf->id)}}"
                             >READ MORE<i class="fa fa-arrow-right ms-3"></i

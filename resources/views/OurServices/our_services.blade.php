@@ -54,8 +54,8 @@
                                 <img class="img-fluid" src="{{asset('storage/'.$s->image)}}" alt=""/>
                                 <div class="service-text position-relative text-center h-100 p-4">
                                     <h5 class="mb-3">{{$s->title}}</h5>
-                                    <p>
-                                        {!! html_entity_decode($s['description']) !!}
+                                    <p class="line-clamp">
+                                        {{strip_tags($s->description)}}
                                     </p>
                                 </div>
                             </a>
