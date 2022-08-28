@@ -2,7 +2,6 @@
 
 namespace App\Filament\Widgets;
 
-use Closure;
 use Filament\Tables;
 use Filament\Widgets\TableWidget as BaseWidget;
 use Illuminate\Database\Eloquent\Builder;
@@ -10,6 +9,7 @@ use Illuminate\Database\Eloquent\Builder;
 class AppointmentMessage extends BaseWidget
 {
     protected static ?int $sort = 2;
+
     protected function getTableQuery(): Builder
     {
         return \App\Models\Appointment::query()->latest()->limit(10);

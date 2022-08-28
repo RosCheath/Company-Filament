@@ -24,6 +24,7 @@ class Certificate extends Component
     public function render()
     {
         $certificate = \App\Models\Certificate::all();
-        return view('components.certificate',compact('certificate'));
+
+        return view('components.certificate', compact('certificate'));
     }
 }

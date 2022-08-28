@@ -3,15 +3,12 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CertificateResource\Pages;
-use App\Filament\Resources\CertificateResource\RelationManagers;
 use App\Models\Certificate;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class CertificateResource extends Resource
 {
@@ -68,8 +65,8 @@ class CertificateResource extends Resource
     {
         return [
             'index' => Pages\ListCertificates::route('/'),
-//            'create' => Pages\CreateCertificate::route('/create'),
-//            'edit' => Pages\EditCertificate::route('/{record}/edit'),
+            //            'create' => Pages\CreateCertificate::route('/create'),
+            //            'edit' => Pages\EditCertificate::route('/{record}/edit'),
         ];
     }
 }
