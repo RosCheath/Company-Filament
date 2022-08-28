@@ -2,6 +2,8 @@
 
 namespace App\Filament\Widgets;
 
+use App\Models\Appointment;
+use App\Models\ContactMessage;
 use App\Models\Employee;
 use App\Models\Feed;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
@@ -17,7 +19,13 @@ class StatsOverview extends BaseWidget
                 ->icon('heroicon-o-rss'),
             Card::make('All Employees', Employee::all()->count())
                 ->description('Total Employee in your company')
-                ->icon('heroicon-o-users'),
+                ->icon('heroicon-o-user-group'),
+            Card::make('All Contact', ContactMessage::all()->count())
+                ->description('Total Contact in your company')
+                ->icon('heroicon-o-chat-alt'),
+            Card::make('All Appointment', Appointment::all()->count())
+                ->description('Total Appointment in your company')
+                ->icon('heroicon-o-chat-alt-2'),
 
         ];
     }

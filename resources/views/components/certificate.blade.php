@@ -16,11 +16,9 @@
                          data-wow-delay="0.{{2+$loop->index+3}}s"
                     >
                         <div class="team-item position-relative">
+                            <a target="_blank" href="{{asset('storage/'. $c->image)}}">
                             <img class="img-fluid" src="{{asset('storage/'. $c->image)}}" alt=""/>
-{{--                            <div class="team-text bg-white p-4">--}}
-{{--                                <h5>{{$c->name}}</h5>--}}
-{{--                                <span>{{$c->title}}</span>--}}
-{{--                            </div>--}}
+                            </a>
                         </div>
                     </div>
                 @endforeach
@@ -29,3 +27,8 @@
     </div>
     <!-- certificate End -->
 </div>
+<style>
+
+</style>
+
+
