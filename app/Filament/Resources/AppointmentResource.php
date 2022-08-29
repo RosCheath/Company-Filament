@@ -11,7 +11,6 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Model;
 
 class AppointmentResource extends Resource
@@ -70,7 +69,7 @@ class AppointmentResource extends Resource
                 Tables\Columns\TextColumn::make('phone')->searchable(),
                 Tables\Columns\TextColumn::make('email')->searchable(),
                 Tables\Columns\TextColumn::make('service.title'),
-                 Tables\Columns\TextColumn::make('message')->limit(25),
+                Tables\Columns\TextColumn::make('message')->limit(25),
 
             ])
             ->filters([
