@@ -86,7 +86,9 @@ class EmployeeResource extends Resource
 
                 Forms\Components\Card::make()
                     ->schema([
-                        FileUpload::make('cv')->acceptedFileTypes(['application/pdf', 'docx']),
+                        FileUpload::make('cv')->acceptedFileTypes(['application/pdf', 'docx'])
+                        ->enableDownload()
+                        ->enableOpen(),
                         FileUpload::make('image'),
                     ])->columnSpan(1),
 
