@@ -3,10 +3,13 @@
 namespace App\Http\Livewire;
 
 use App\Models\ContactMessage;
+use Filament\Notifications\Notification;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 
 class Contact extends Component
 {
+    use LivewireAlert;
     public $name;
 
     public $email;
@@ -23,7 +26,8 @@ class Contact extends Component
         $contact->subject = $this->subject;
         $contact->message = $this->message;
         $contact->save();
-        session()->flash('success', 'Your contact has been send.');
+//        session()->flash('success', 'Your contact has been send.');
+        $this->alert('success', 'Your contact has been send.');
         $this->reset(['subject', 'message']);
     }
 

@@ -12,7 +12,6 @@
 </head>
 
 <body>
-
 @include('layouts.components.2_spinner')
 
 @include('layouts.components.3_topbar')
@@ -30,5 +29,9 @@
 
 @include('layouts.components.6_script')
 @livewireScripts
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<x-livewire-alert::scripts />
 </body>
 </html>
