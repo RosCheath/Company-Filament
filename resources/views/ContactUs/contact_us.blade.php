@@ -76,7 +76,9 @@
                             {{$contact_us->title}}
                         </h1>
                     </div>
-                    <x-contact-form></x-contact-form>
+{{--                    <x-contact-form></x-contact-form>--}}
+{{--                    @include('livewire.contact')--}}
+                    <livewire:contact/>
                 </div>
             </div>
         </div>

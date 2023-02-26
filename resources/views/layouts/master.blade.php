@@ -8,7 +8,7 @@
     <meta content="" name="description"/>
 
     @include('layouts.components.1_style')
-
+    @livewireStyles
 </head>
 
 <body>
@@ -29,6 +29,6 @@
 </a>
 
 @include('layouts.components.6_script')
-
+@livewireScripts
 </body>
 </html>
