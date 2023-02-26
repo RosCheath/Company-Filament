@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             HomeCarouselSeeder::class,
             AboutCarouselSeeder::class,
             AboutUsSeeder::class,
-            AboutTeamSeeder::class,
+//            AboutTeamSeeder::class,
             ContactUsSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
