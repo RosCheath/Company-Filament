@@ -10,6 +10,7 @@
         "filament/spatie-laravel-media-library-plugin": "^2.15",
         "guzzlehttp/guzzle": "^7.2",
         "jantinnerezo/livewire-alert": "^2.2",
+        "jeffgreco13/filament-breezy": "^1.5",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
