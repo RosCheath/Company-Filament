@@ -3,13 +3,13 @@
 namespace App\Http\Livewire;
 
 use App\Models\ContactMessage;
-use Filament\Notifications\Notification;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 
 class Contact extends Component
 {
     use LivewireAlert;
+
     public $name;
 
     public $email;
