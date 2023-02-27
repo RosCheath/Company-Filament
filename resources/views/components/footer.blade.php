@@ -18,10 +18,10 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
-                    <h1 class="text-white mb-4">
-                        <img src="{{asset('logo_footer.png')}}">
-                        {{config('app.name')}}
-                    </h1>
+                        <h3 class="text-white mb-4">
+                            <img src="{{asset('logo22.png')}}" width="70" height="70">
+                            {{config('app.name')}}
+                        </h3>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Address</h4>
@@ -53,11 +53,11 @@
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                         &copy; <a href="{{url('/')}}">{{config('app.name')}}</a>, All Right Reserved.
                     </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        Created By:
-                        <a href="https://www.facebook.com/profile.php?id=100013670286692" target="_blank">Ros
-                            socheath</a>
-                    </div>
+{{--                    <div class="col-md-6 text-center text-md-end">--}}
+{{--                        Created By:--}}
+{{--                        <a href="https://www.facebook.com/profile.php?id=100013670286692" target="_blank">Ros--}}
+{{--                            socheath</a>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>

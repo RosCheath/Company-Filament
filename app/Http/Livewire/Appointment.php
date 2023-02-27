@@ -22,13 +22,14 @@ class Appointment extends Component
 
     public function store()
     {
-        $appointment = new \App\Models\Appointment();
-        $appointment->name = $this->name;
-        $appointment->email = $this->email;
-        $appointment->phone = $this->phone;
-        $appointment->service_id = $this->service_id;
-        $appointment->message = $this->message;
-        $appointment->save();
+        $appointment = $this->validate([
+            'name' => 'required|max:50',
+            'email' => 'required|max:30',
+            'phone' => 'required|max:15',
+            'service_id' => 'required',
+            'message' => 'required',
+        ]);
+        \App\Models\Appointment::create($appointment);
         $this->alert('success', 'Your appointment has been send.');
         $this->reset();
     }
@@ -36,7 +37,6 @@ class Appointment extends Component
     public function render()
     {
         $service = Service::all()->where('is_public', '=', '1');
-
         return view('livewire.appointment', compact('service'));
     }
 }

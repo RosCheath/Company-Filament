@@ -1,5 +1,5 @@
 <!-- Favicon -->
-<link href="{{asset('logo.png')}}" rel="icon"/>
+<link href="{{asset('logo22.png')}}" rel="icon"/>
 
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>

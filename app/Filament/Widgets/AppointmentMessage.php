@@ -14,6 +14,10 @@ class AppointmentMessage extends BaseWidget
     {
         return \App\Models\Appointment::query()->latest()->limit(10);
     }
+    protected function isTablePaginationEnabled(): bool
+    {
+        return false;
+    }
 
     protected function getTableColumns(): array
     {
