@@ -17,25 +17,20 @@
                                 <div class="container">
                                     <div class="row justify-content-center">
                                         <div class="col-12 col-lg-10">
-                                            <h5
-                                                class="text-light text-uppercase mb-3 animated slideInDown"
-                                            >
-                                                Welcome to {{config('app.name')}}
-                                            </h5>
                                             <h1 class="display-2 text-light mb-3 animated slideInDown">
                                                 {{$carousels->title}}
                                             </h1>
-                                            <ol class="breadcrumb mb-4 pb-2">
-                                                <li class="breadcrumb-item fs-5 text-light">
-                                                    Commercial
-                                                </li>
-                                                <li class="breadcrumb-item fs-5 text-light">
-                                                    Residential
-                                                </li>
-                                                <li class="breadcrumb-item fs-5 text-light">
-                                                    Industrial
-                                                </li>
-                                            </ol>
+{{--                                            <ol class="breadcrumb mb-4 pb-2">--}}
+{{--                                                <li class="breadcrumb-item fs-5 text-light">--}}
+{{--                                                    Commercial--}}
+{{--                                                </li>--}}
+{{--                                                <li class="breadcrumb-item fs-5 text-light">--}}
+{{--                                                    Residential--}}
+{{--                                                </li>--}}
+{{--                                                <li class="breadcrumb-item fs-5 text-light">--}}
+{{--                                                    Industrial--}}
+{{--                                                </li>--}}
+{{--                                            </ol>--}}
                                         </div>
                                     </div>
                                 </div>
@@ -200,7 +195,7 @@
                     <div class="border-start border-5 border-primary ps-4">
                         <h6 class="text-body text-uppercase mb-2">Our Services</h6>
                         <h1 class="display-6 mb-0">
-                            Construction And Renovation Solutions
+                            About Services
                         </h1>
                     </div>
                 </div>
@@ -231,37 +226,37 @@
     <!-- Service End -->
 
     <x-appointment-form></x-appointment-form>
-    <!-- Team Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5 align-items-end mb-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="border-start border-5 border-primary ps-4">
-                        <h6 class="text-body text-uppercase mb-2">Our Team</h6>
-                        <h1 class="display-6 mb-0">Our Expert Worker</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-4">
-                @foreach($team as $t)
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="team-item position-relative">
-                            @if($t->image === 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg')
-                                <img class="img-fluid" src="{{$t->image}}">
-                            @else
-                                <img class="img-fluid" src="{{asset('storage/'.$t->image)}}" alt=""/>
-                            @endif
-                            <div class="team-text bg-white p-4">
-                                <h5>{{$t->name}}</h5>
-                                <span>{{$t->position}}</span>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-    <!-- Team End -->
+{{--    <!-- Team Start -->--}}
+{{--    <div class="container-xxl py-5">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row g-5 align-items-end mb-5">--}}
+{{--                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">--}}
+{{--                    <div class="border-start border-5 border-primary ps-4">--}}
+{{--                        <h6 class="text-body text-uppercase mb-2">Our Team</h6>--}}
+{{--                        <h1 class="display-6 mb-0">Our Expert Worker</h1>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="row g-4">--}}
+{{--                @foreach($team as $t)--}}
+{{--                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">--}}
+{{--                        <div class="team-item position-relative">--}}
+{{--                            @if($t->image === 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg')--}}
+{{--                                <img class="img-fluid" src="{{$t->image}}">--}}
+{{--                            @else--}}
+{{--                                <img class="img-fluid" src="{{asset('storage/'.$t->image)}}" alt=""/>--}}
+{{--                            @endif--}}
+{{--                            <div class="team-text bg-white p-4">--}}
+{{--                                <h5>{{$t->name}}</h5>--}}
+{{--                                <span>{{$t->position}}</span>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                @endforeach--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    <!-- Team End -->--}}
 
     <!-- Testimonial Start -->
     <div class="container-xxl py-5">
@@ -270,12 +265,12 @@
                 <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="border-start border-5 border-primary ps-4 mb-5">
                         <h6 class="text-body text-uppercase mb-2">FOUNDERING</h6>
-                        <h1 class="display-6 mb-0">This Is Founder of -> {{config('app.name')}}</h1>
+                        <h1 class="display-6 mb-0">This Is Founder</h1>
                     </div>
 
                     <div class="border-start border-5 border-primary ps-4 mb-5">
-                        <h6 class="text-body text-uppercase mb-2">Testimonial</h6>
-                        <h1 class="display-6 mb-0">How Many Happy Clients!</h1>
+                        <h6 class="text-body text-uppercase mb-2">Service</h6>
+                        <h1 class="display-6 mb-0">Service Count</h1>
                     </div>
 
                     <div class="row g-4">
