@@ -290,46 +290,46 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="owl-carousel testimonial-carousel">
-                        <div class="testimonial-item">
-                            <img
-                                class="img-fluid mb-4"
-                                src="{{asset('asset/img/testimonial-1.jpg')}}"
-                                alt=""
-                            />
-                            <p class="fs-5">
-                                Dolores sed duo clita tempor justo dolor et stet lorem kasd
-                                labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy
-                                et labore et tempor diam tempor erat.
-                            </p>
-                            <div
-                                class="bg-primary mb-3"
-                                style="width: 60px; height: 5px"
-                            ></div>
-                            <h5>Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                        <div class="testimonial-item">
-                            <img
-                                class="img-fluid mb-4"
-                                src="{{asset('asset/img/testimonial-2.jpg')}}"
-                                alt=""
-                            />
-                            <p class="fs-5">
-                                Dolores sed duo clita tempor justo dolor et stet lorem kasd
-                                labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy
-                                et labore et tempor diam tempor erat.
-                            </p>
-                            <div
-                                class="bg-primary mb-3"
-                                style="width: 60px; height: 5px"
-                            ></div>
-                            <h5>Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                    </div>
-                </div>
+{{--                <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.5s">--}}
+{{--                    <div class="owl-carousel testimonial-carousel">--}}
+{{--                        <div class="testimonial-item">--}}
+{{--                            <img--}}
+{{--                                class="img-fluid mb-4"--}}
+{{--                                src="{{asset('asset/img/testimonial-1.jpg')}}"--}}
+{{--                                alt=""--}}
+{{--                            />--}}
+{{--                            <p class="fs-5">--}}
+{{--                                Dolores sed duo clita tempor justo dolor et stet lorem kasd--}}
+{{--                                labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy--}}
+{{--                                et labore et tempor diam tempor erat.--}}
+{{--                            </p>--}}
+{{--                            <div--}}
+{{--                                class="bg-primary mb-3"--}}
+{{--                                style="width: 60px; height: 5px"--}}
+{{--                            ></div>--}}
+{{--                            <h5>Client Name</h5>--}}
+{{--                            <span>Profession</span>--}}
+{{--                        </div>--}}
+{{--                        <div class="testimonial-item">--}}
+{{--                            <img--}}
+{{--                                class="img-fluid mb-4"--}}
+{{--                                src="{{asset('asset/img/testimonial-2.jpg')}}"--}}
+{{--                                alt=""--}}
+{{--                            />--}}
+{{--                            <p class="fs-5">--}}
+{{--                                Dolores sed duo clita tempor justo dolor et stet lorem kasd--}}
+{{--                                labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy--}}
+{{--                                et labore et tempor diam tempor erat.--}}
+{{--                            </p>--}}
+{{--                            <div--}}
+{{--                                class="bg-primary mb-3"--}}
+{{--                                style="width: 60px; height: 5px"--}}
+{{--                            ></div>--}}
+{{--                            <h5>Client Name</h5>--}}
+{{--                            <span>Profession</span>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
         </div>
     </div>
